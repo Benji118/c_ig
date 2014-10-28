@@ -1,0 +1,164 @@
+\hypertarget{ei__frame__widget_8c}{\section{ei\-\_\-frame\-\_\-widget.\-c File Reference}
+\label{ei__frame__widget_8c}\index{ei\-\_\-frame\-\_\-widget.\-c@{ei\-\_\-frame\-\_\-widget.\-c}}
+}
+
+
+Definition and fonctions of the class \char`\"{}frame\char`\"{}.  
+
+
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}ei\-\_\-frame\-\_\-widget.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ei\-\_\-types.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ei\-\_\-utils.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ei\-\_\-draw\-\_\-tools.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ei\-\_\-application.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$ \hyperlink{ei__frame__widget_8c_a9103b7e72d4f77c82f07c7287ca07381}{ei\-\_\-frame\-\_\-allocfunc} ()
+\begin{DoxyCompactList}\small\item\em A function that allocates a block of memory that is big enough to store the attributes of the frame widget. After allocation, the function {\itshape must} initialize the memory to 0. \end{DoxyCompactList}\item 
+void \hyperlink{ei__frame__widget_8c_ae1f24ddd8e0aae106206a5c87ed397d5}{ei\-\_\-frame\-\_\-releasefunc} (struct \hyperlink{structei__widget__t}{ei\-\_\-widget\-\_\-t} $\ast$widget)
+\begin{DoxyCompactList}\small\item\em A function that releases the memory used by a widget before it is destroyed. The \hyperlink{structei__widget__t}{ei\-\_\-widget\-\_\-t} structure itself, passed as parameter, must {\itshape not} by freed by these functions. Can be set to N\-U\-L\-L in \hyperlink{structei__widgetclass__t}{ei\-\_\-widgetclass\-\_\-t} if no memory is used by a class of widget. \end{DoxyCompactList}\item 
+void \hyperlink{ei__frame__widget_8c_aabcd2c3b97ba1118c41e4b61e6bde049}{ei\-\_\-frame\-\_\-setdefaultsfunc} (struct \hyperlink{structei__widget__t}{ei\-\_\-widget\-\_\-t} $\ast$widget)
+\begin{DoxyCompactList}\small\item\em A function that sets the default values for the class \char`\"{}frame\char`\"{}. \end{DoxyCompactList}\item 
+void \hyperlink{ei__frame__widget_8c_a2d79e60f23d3a3f45c64579cb0241740}{ei\-\_\-root\-\_\-frame\-\_\-setdefaultsfunc} (struct \hyperlink{structei__widget__t}{ei\-\_\-widget\-\_\-t} $\ast$widget, \hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\-\_\-surface\-\_\-t} \hyperlink{ei__application_8c_a142683c82eaff993825c77d3598a0980}{display\-\_\-surface})
+\item 
+void \hyperlink{ei__frame__widget_8c_af9ec748f60869b6179adae24d88cd412}{ei\-\_\-frame\-\_\-geomnotifyfunc} (struct \hyperlink{structei__widget__t}{ei\-\_\-widget\-\_\-t} $\ast$widget, \hyperlink{structei__rect__t}{ei\-\_\-rect\-\_\-t} rect)
+\begin{DoxyCompactList}\small\item\em A function that is called to notify the widget that its geometry has been modified by its geometry manager. Can set to N\-U\-L\-L in \hyperlink{structei__widgetclass__t}{ei\-\_\-widgetclass\-\_\-t}. \end{DoxyCompactList}\item 
+void \hyperlink{ei__frame__widget_8c_ac9ccaaf6d744cfb8ed05a9e83e782906}{ei\-\_\-frame\-\_\-drawfunc} (struct \hyperlink{structei__widget__t}{ei\-\_\-widget\-\_\-t} $\ast$widget, \hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\-\_\-surface\-\_\-t} surface, \hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\-\_\-surface\-\_\-t} pick\-\_\-surface, \hyperlink{structei__rect__t}{ei\-\_\-rect\-\_\-t} $\ast$clipper)
+\begin{DoxyCompactList}\small\item\em A function that draws widgets of the class \char`\"{}frame\char`\"{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Definition and fonctions of the class \char`\"{}frame\char`\"{}. \begin{DoxyAuthor}{Author}
+Equipe poulet 06.\-2014 
+\end{DoxyAuthor}
+
+
+Definition in file \hyperlink{ei__frame__widget_8c_source}{ei\-\_\-frame\-\_\-widget.\-c}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{ei__frame__widget_8c_a9103b7e72d4f77c82f07c7287ca07381}{\index{ei\-\_\-frame\-\_\-widget.\-c@{ei\-\_\-frame\-\_\-widget.\-c}!ei\-\_\-frame\-\_\-allocfunc@{ei\-\_\-frame\-\_\-allocfunc}}
+\index{ei\-\_\-frame\-\_\-allocfunc@{ei\-\_\-frame\-\_\-allocfunc}!ei_frame_widget.c@{ei\-\_\-frame\-\_\-widget.\-c}}
+\subsubsection[{ei\-\_\-frame\-\_\-allocfunc}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ ei\-\_\-frame\-\_\-allocfunc (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{ei__frame__widget_8c_a9103b7e72d4f77c82f07c7287ca07381}
+
+
+A function that allocates a block of memory that is big enough to store the attributes of the frame widget. After allocation, the function {\itshape must} initialize the memory to 0. 
+
+\begin{DoxyReturn}{Returns}
+A block of memory with all bytes set to 0. 
+\end{DoxyReturn}
+
+
+Definition at line 26 of file ei\-\_\-frame\-\_\-widget.\-c.
+
+\hypertarget{ei__frame__widget_8c_ac9ccaaf6d744cfb8ed05a9e83e782906}{\index{ei\-\_\-frame\-\_\-widget.\-c@{ei\-\_\-frame\-\_\-widget.\-c}!ei\-\_\-frame\-\_\-drawfunc@{ei\-\_\-frame\-\_\-drawfunc}}
+\index{ei\-\_\-frame\-\_\-drawfunc@{ei\-\_\-frame\-\_\-drawfunc}!ei_frame_widget.c@{ei\-\_\-frame\-\_\-widget.\-c}}
+\subsubsection[{ei\-\_\-frame\-\_\-drawfunc}]{\setlength{\rightskip}{0pt plus 5cm}void ei\-\_\-frame\-\_\-drawfunc (
+\begin{DoxyParamCaption}
+\item[{struct {\bf ei\-\_\-widget\-\_\-t} $\ast$}]{widget, }
+\item[{{\bf ei\-\_\-surface\-\_\-t}}]{surface, }
+\item[{{\bf ei\-\_\-surface\-\_\-t}}]{pick\-\_\-surface, }
+\item[{{\bf ei\-\_\-rect\-\_\-t} $\ast$}]{clipper}
+\end{DoxyParamCaption}
+)}}\label{ei__frame__widget_8c_ac9ccaaf6d744cfb8ed05a9e83e782906}
+
+
+A function that draws widgets of the class \char`\"{}frame\char`\"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em widget} & A pointer to the widget instance to draw. \\
+\hline
+{\em surface} & Where to draw the widget. The actual location of the widget in the surface is stored in its \char`\"{}screen\-\_\-location\char`\"{} field. \\
+\hline
+{\em clipper} & If not N\-U\-L\-L, the drawing is restricted within this rectangle (expressed in the surface reference frame). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 108 of file ei\-\_\-frame\-\_\-widget.\-c.
+
+\hypertarget{ei__frame__widget_8c_af9ec748f60869b6179adae24d88cd412}{\index{ei\-\_\-frame\-\_\-widget.\-c@{ei\-\_\-frame\-\_\-widget.\-c}!ei\-\_\-frame\-\_\-geomnotifyfunc@{ei\-\_\-frame\-\_\-geomnotifyfunc}}
+\index{ei\-\_\-frame\-\_\-geomnotifyfunc@{ei\-\_\-frame\-\_\-geomnotifyfunc}!ei_frame_widget.c@{ei\-\_\-frame\-\_\-widget.\-c}}
+\subsubsection[{ei\-\_\-frame\-\_\-geomnotifyfunc}]{\setlength{\rightskip}{0pt plus 5cm}void ei\-\_\-frame\-\_\-geomnotifyfunc (
+\begin{DoxyParamCaption}
+\item[{struct {\bf ei\-\_\-widget\-\_\-t} $\ast$}]{widget, }
+\item[{{\bf ei\-\_\-rect\-\_\-t}}]{rect}
+\end{DoxyParamCaption}
+)}}\label{ei__frame__widget_8c_af9ec748f60869b6179adae24d88cd412}
+
+
+A function that is called to notify the widget that its geometry has been modified by its geometry manager. Can set to N\-U\-L\-L in \hyperlink{structei__widgetclass__t}{ei\-\_\-widgetclass\-\_\-t}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em widget} & The widget instance to notify of a geometry change. \\
+\hline
+{\em rect} & The new rectangular screen location of the widget (i.\-e. = widget-\/$>$screen\-\_\-location). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 98 of file ei\-\_\-frame\-\_\-widget.\-c.
+
+\hypertarget{ei__frame__widget_8c_ae1f24ddd8e0aae106206a5c87ed397d5}{\index{ei\-\_\-frame\-\_\-widget.\-c@{ei\-\_\-frame\-\_\-widget.\-c}!ei\-\_\-frame\-\_\-releasefunc@{ei\-\_\-frame\-\_\-releasefunc}}
+\index{ei\-\_\-frame\-\_\-releasefunc@{ei\-\_\-frame\-\_\-releasefunc}!ei_frame_widget.c@{ei\-\_\-frame\-\_\-widget.\-c}}
+\subsubsection[{ei\-\_\-frame\-\_\-releasefunc}]{\setlength{\rightskip}{0pt plus 5cm}void ei\-\_\-frame\-\_\-releasefunc (
+\begin{DoxyParamCaption}
+\item[{struct {\bf ei\-\_\-widget\-\_\-t} $\ast$}]{widget}
+\end{DoxyParamCaption}
+)}}\label{ei__frame__widget_8c_ae1f24ddd8e0aae106206a5c87ed397d5}
+
+
+A function that releases the memory used by a widget before it is destroyed. The \hyperlink{structei__widget__t}{ei\-\_\-widget\-\_\-t} structure itself, passed as parameter, must {\itshape not} by freed by these functions. Can be set to N\-U\-L\-L in \hyperlink{structei__widgetclass__t}{ei\-\_\-widgetclass\-\_\-t} if no memory is used by a class of widget. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em widget} & The widget which resources are to be freed. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 38 of file ei\-\_\-frame\-\_\-widget.\-c.
+
+\hypertarget{ei__frame__widget_8c_aabcd2c3b97ba1118c41e4b61e6bde049}{\index{ei\-\_\-frame\-\_\-widget.\-c@{ei\-\_\-frame\-\_\-widget.\-c}!ei\-\_\-frame\-\_\-setdefaultsfunc@{ei\-\_\-frame\-\_\-setdefaultsfunc}}
+\index{ei\-\_\-frame\-\_\-setdefaultsfunc@{ei\-\_\-frame\-\_\-setdefaultsfunc}!ei_frame_widget.c@{ei\-\_\-frame\-\_\-widget.\-c}}
+\subsubsection[{ei\-\_\-frame\-\_\-setdefaultsfunc}]{\setlength{\rightskip}{0pt plus 5cm}void ei\-\_\-frame\-\_\-setdefaultsfunc (
+\begin{DoxyParamCaption}
+\item[{struct {\bf ei\-\_\-widget\-\_\-t} $\ast$}]{widget}
+\end{DoxyParamCaption}
+)}}\label{ei__frame__widget_8c_aabcd2c3b97ba1118c41e4b61e6bde049}
+
+
+A function that sets the default values for the class \char`\"{}frame\char`\"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em widget} & A pointer to the widget instance to intialize. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 54 of file ei\-\_\-frame\-\_\-widget.\-c.
+
+\hypertarget{ei__frame__widget_8c_a2d79e60f23d3a3f45c64579cb0241740}{\index{ei\-\_\-frame\-\_\-widget.\-c@{ei\-\_\-frame\-\_\-widget.\-c}!ei\-\_\-root\-\_\-frame\-\_\-setdefaultsfunc@{ei\-\_\-root\-\_\-frame\-\_\-setdefaultsfunc}}
+\index{ei\-\_\-root\-\_\-frame\-\_\-setdefaultsfunc@{ei\-\_\-root\-\_\-frame\-\_\-setdefaultsfunc}!ei_frame_widget.c@{ei\-\_\-frame\-\_\-widget.\-c}}
+\subsubsection[{ei\-\_\-root\-\_\-frame\-\_\-setdefaultsfunc}]{\setlength{\rightskip}{0pt plus 5cm}void ei\-\_\-root\-\_\-frame\-\_\-setdefaultsfunc (
+\begin{DoxyParamCaption}
+\item[{struct {\bf ei\-\_\-widget\-\_\-t} $\ast$}]{widget, }
+\item[{{\bf ei\-\_\-surface\-\_\-t}}]{display\-\_\-surface}
+\end{DoxyParamCaption}
+)}}\label{ei__frame__widget_8c_a2d79e60f23d3a3f45c64579cb0241740}
+
+
+Definition at line 72 of file ei\-\_\-frame\-\_\-widget.\-c.
+

@@ -1,0 +1,326 @@
+\hypertarget{ei__application_8c}{\section{ei\-\_\-application.\-c File Reference}
+\label{ei__application_8c}\index{ei\-\_\-application.\-c@{ei\-\_\-application.\-c}}
+}
+
+
+Manages the main steps of a graphical application \-:  
+
+
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}ei\-\_\-application.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ei\-\_\-geometrymanager.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ei\-\_\-event.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ei\-\_\-bindinglist.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ei\-\_\-frame\-\_\-widget.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ei\-\_\-button\-\_\-widget.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ei\-\_\-toplevel\-\_\-widget.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ei\-\_\-widget.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ei\-\_\-mouse.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ei\-\_\-draw\-\_\-tools.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{ei__application_8c_a4bb2bfc3248b18adad2b272b011883ab}{ei\-\_\-app\-\_\-create} (\hyperlink{structei__size__t}{ei\-\_\-size\-\_\-t} $\ast$main\-\_\-window\-\_\-size, \hyperlink{ei__types_8h_a383b9af13bd6a0a893096ead3c4d8e28}{ei\-\_\-bool\-\_\-t} fullscreen)
+\begin{DoxyCompactList}\small\item\em Creates an application. \end{DoxyCompactList}\item 
+static void \hyperlink{ei__application_8c_a8fec11eb2a9f1985ea41dbeead7f4928}{insertion\-\_\-tail} (\hyperlink{structei__linked__rect__t}{ei\-\_\-linked\-\_\-rect\-\_\-t} $\ast$new\-\_\-rect)
+\item 
+static void \hyperlink{ei__application_8c_a97e61c9c1feb3ab58d97bf0e7e2aa72b}{clear\-\_\-out\-\_\-list} ()
+\item 
+void \hyperlink{ei__application_8c_a670d0bcb22879506fdb9944ae26df2f5}{ei\-\_\-app\-\_\-invalidate\-\_\-rect} (\hyperlink{structei__rect__t}{ei\-\_\-rect\-\_\-t} $\ast$rect)
+\begin{DoxyCompactList}\small\item\em Adds a rectangle to the list of rectangles that must be updated on screen. The real update on the screen will be done at the right moment in the main loop. \end{DoxyCompactList}\item 
+void \hyperlink{ei__application_8c_ad7ab77d706b9648b49c33ef3d2c830c0}{ei\-\_\-app\-\_\-free} ()
+\begin{DoxyCompactList}\small\item\em Releases all the resources of the application, and releases the hardware (ie. calls \hyperlink{hw__interface_8h_a6e856924f3b4c8966a870e56a3b1dcb1}{hw\-\_\-quit}). \end{DoxyCompactList}\item 
+static void \hyperlink{ei__application_8c_a9f537e618260d5a5acc714d49ae26fe8}{ei\-\_\-draw\-\_\-widget\-\_\-family} (\hyperlink{structei__widget__t}{ei\-\_\-widget\-\_\-t} $\ast$widget)
+\item 
+void \hyperlink{ei__application_8c_a908e16a7c4c63a7db2286dfb0efe7a4a}{ei\-\_\-execute\-\_\-callbacks} (\hyperlink{structei__widget__t}{ei\-\_\-widget\-\_\-t} $\ast$widget, \hyperlink{structei__event__t}{ei\-\_\-event\-\_\-t} $\ast$event)
+\item 
+void \hyperlink{ei__application_8c_a0ef8ee557666f4cd94bfcaca43428af3}{ei\-\_\-redraw\-\_\-surfaces} (\hyperlink{structei__widget__t}{ei\-\_\-widget\-\_\-t} $\ast$widget)
+\item 
+void \hyperlink{ei__application_8c_a4b18dede5829aec0e5b246ccf66bf439}{ei\-\_\-app\-\_\-run} ()
+\begin{DoxyCompactList}\small\item\em Runs the application\-: enters the main event loop. Exits when \hyperlink{ei__application_8c_a05dff77e07ed2d7a896b14c15a939457}{ei\-\_\-app\-\_\-quit\-\_\-request} is called. \end{DoxyCompactList}\item 
+void \hyperlink{ei__application_8c_a05dff77e07ed2d7a896b14c15a939457}{ei\-\_\-app\-\_\-quit\-\_\-request} ()
+\begin{DoxyCompactList}\small\item\em Tells the application to quite. Is usually called by an event handler (for example when pressing the \char`\"{}\-Escape\char`\"{} key). \end{DoxyCompactList}\item 
+\hyperlink{structei__widget__t}{ei\-\_\-widget\-\_\-t} $\ast$ \hyperlink{ei__application_8c_a97eeb53e6bac85cfb5f19f4baa77e114}{ei\-\_\-app\-\_\-root\-\_\-widget} ()
+\begin{DoxyCompactList}\small\item\em Returns the \char`\"{}root widget\char`\"{} of the application\-: a \char`\"{}frame\char`\"{} widget that encapsulate the root window. \end{DoxyCompactList}\item 
+\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\-\_\-surface\-\_\-t} \hyperlink{ei__application_8c_adf0b5ac3d996e47e37c65907671fb9b7}{ei\-\_\-app\-\_\-root\-\_\-surface} ()
+\begin{DoxyCompactList}\small\item\em Returns the surface of the root window. Used to create surfaces with similar r, g, b channels. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\-\_\-surface\-\_\-t} \hyperlink{ei__application_8c_a142683c82eaff993825c77d3598a0980}{display\-\_\-surface}
+\item 
+\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\-\_\-surface\-\_\-t} \hyperlink{ei__application_8c_a05417b6ce783aad33443822917f4e5e0}{offscreen\-\_\-surface}
+\item 
+static \hyperlink{structei__widget__t}{ei\-\_\-widget\-\_\-t} $\ast$ \hyperlink{ei__application_8c_adaae61cd8e607e6e21b009b373f0a074}{root\-\_\-widget}
+\item 
+static \hyperlink{structei__linked__rect__t}{ei\-\_\-linked\-\_\-rect\-\_\-t} $\ast$ \hyperlink{ei__application_8c_a1c80d85c454cb5ed4763766673a97cff}{rects\-\_\-to\-\_\-update} = N\-U\-L\-L
+\item 
+\hyperlink{ei__types_8h_a383b9af13bd6a0a893096ead3c4d8e28}{ei\-\_\-bool\-\_\-t} \hyperlink{ei__application_8c_ad31137eef972be3a296747ba8d3c0e9d}{run\-\_\-app} = \hyperlink{ei__types_8h_a383b9af13bd6a0a893096ead3c4d8e28a26fdc833ef14f44fa15d81522b6802ec}{E\-I\-\_\-\-T\-R\-U\-E}
+\item 
+\hyperlink{structei__widgetclass__t}{ei\-\_\-widgetclass\-\_\-t} $\ast$ \hyperlink{ei__application_8c_aad0318bb97fd141e63b33de613f9a9e0}{global\-\_\-register\-\_\-list}
+\item 
+\hyperlink{structei__geometrymanager__t}{ei\-\_\-geometrymanager\-\_\-t} $\ast$ \hyperlink{ei__application_8c_af4e6243b9953aefc06cf3db0acba28b7}{global\-\_\-geometry\-\_\-register}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Manages the main steps of a graphical application \-: \begin{DoxyVerb}            - initialization
+            - main window
+            - main loop
+            - quitting
+            - resource freeing
+\end{DoxyVerb}
+
+
+\begin{DoxyAuthor}{Author}
+Equipe poulet 06.\-2014 
+\end{DoxyAuthor}
+
+
+Definition in file \hyperlink{ei__application_8c_source}{ei\-\_\-application.\-c}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{ei__application_8c_a97e61c9c1feb3ab58d97bf0e7e2aa72b}{\index{ei\-\_\-application.\-c@{ei\-\_\-application.\-c}!clear\-\_\-out\-\_\-list@{clear\-\_\-out\-\_\-list}}
+\index{clear\-\_\-out\-\_\-list@{clear\-\_\-out\-\_\-list}!ei_application.c@{ei\-\_\-application.\-c}}
+\subsubsection[{clear\-\_\-out\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}static void clear\-\_\-out\-\_\-list (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{ei__application_8c_a97e61c9c1feb3ab58d97bf0e7e2aa72b}
+
+
+Definition at line 115 of file ei\-\_\-application.\-c.
+
+\hypertarget{ei__application_8c_a4bb2bfc3248b18adad2b272b011883ab}{\index{ei\-\_\-application.\-c@{ei\-\_\-application.\-c}!ei\-\_\-app\-\_\-create@{ei\-\_\-app\-\_\-create}}
+\index{ei\-\_\-app\-\_\-create@{ei\-\_\-app\-\_\-create}!ei_application.c@{ei\-\_\-application.\-c}}
+\subsubsection[{ei\-\_\-app\-\_\-create}]{\setlength{\rightskip}{0pt plus 5cm}void ei\-\_\-app\-\_\-create (
+\begin{DoxyParamCaption}
+\item[{{\bf ei\-\_\-size\-\_\-t} $\ast$}]{main\-\_\-window\-\_\-size, }
+\item[{{\bf ei\-\_\-bool\-\_\-t}}]{fullscreen}
+\end{DoxyParamCaption}
+)}}\label{ei__application_8c_a4bb2bfc3248b18adad2b272b011883ab}
+
+
+Creates an application. 
+
+
+\begin{DoxyItemize}
+\item initializes the hardware (calls \hyperlink{hw__interface_8h_acf938165e604a675fe09218a1b3cfb5f}{hw\-\_\-init}),  
+\item registers all classes of widget and all geometry managers,  
+\item creates the root window (either in a system window, or the entire screen),  
+\item creates the root widget to accress the root window.  
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em main\-\_\-window\-\_\-size} & If "fullscreen is false, the size of the root window of the application. If \char`\"{}fullscreen\char`\"{} is true, the current monitor resolution is used as the size of the root window, this size is returned in this parameter. \\
+\hline
+{\em full\-Screen} & If true, the root window is the entire screen. Otherwise, it is a system window. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 63 of file ei\-\_\-application.\-c.
+
+\hypertarget{ei__application_8c_ad7ab77d706b9648b49c33ef3d2c830c0}{\index{ei\-\_\-application.\-c@{ei\-\_\-application.\-c}!ei\-\_\-app\-\_\-free@{ei\-\_\-app\-\_\-free}}
+\index{ei\-\_\-app\-\_\-free@{ei\-\_\-app\-\_\-free}!ei_application.c@{ei\-\_\-application.\-c}}
+\subsubsection[{ei\-\_\-app\-\_\-free}]{\setlength{\rightskip}{0pt plus 5cm}void ei\-\_\-app\-\_\-free (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{ei__application_8c_ad7ab77d706b9648b49c33ef3d2c830c0}
+
+
+Releases all the resources of the application, and releases the hardware (ie. calls \hyperlink{hw__interface_8h_a6e856924f3b4c8966a870e56a3b1dcb1}{hw\-\_\-quit}). 
+
+
+
+Definition at line 154 of file ei\-\_\-application.\-c.
+
+\hypertarget{ei__application_8c_a670d0bcb22879506fdb9944ae26df2f5}{\index{ei\-\_\-application.\-c@{ei\-\_\-application.\-c}!ei\-\_\-app\-\_\-invalidate\-\_\-rect@{ei\-\_\-app\-\_\-invalidate\-\_\-rect}}
+\index{ei\-\_\-app\-\_\-invalidate\-\_\-rect@{ei\-\_\-app\-\_\-invalidate\-\_\-rect}!ei_application.c@{ei\-\_\-application.\-c}}
+\subsubsection[{ei\-\_\-app\-\_\-invalidate\-\_\-rect}]{\setlength{\rightskip}{0pt plus 5cm}void ei\-\_\-app\-\_\-invalidate\-\_\-rect (
+\begin{DoxyParamCaption}
+\item[{{\bf ei\-\_\-rect\-\_\-t} $\ast$}]{rect}
+\end{DoxyParamCaption}
+)}}\label{ei__application_8c_a670d0bcb22879506fdb9944ae26df2f5}
+
+
+Adds a rectangle to the list of rectangles that must be updated on screen. The real update on the screen will be done at the right moment in the main loop. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rect} & The rectangle to add, expressed in the root window coordinates. A copy is made, so it is safe to release the rectangle on return. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 133 of file ei\-\_\-application.\-c.
+
+\hypertarget{ei__application_8c_a05dff77e07ed2d7a896b14c15a939457}{\index{ei\-\_\-application.\-c@{ei\-\_\-application.\-c}!ei\-\_\-app\-\_\-quit\-\_\-request@{ei\-\_\-app\-\_\-quit\-\_\-request}}
+\index{ei\-\_\-app\-\_\-quit\-\_\-request@{ei\-\_\-app\-\_\-quit\-\_\-request}!ei_application.c@{ei\-\_\-application.\-c}}
+\subsubsection[{ei\-\_\-app\-\_\-quit\-\_\-request}]{\setlength{\rightskip}{0pt plus 5cm}void ei\-\_\-app\-\_\-quit\-\_\-request (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{ei__application_8c_a05dff77e07ed2d7a896b14c15a939457}
+
+
+Tells the application to quite. Is usually called by an event handler (for example when pressing the \char`\"{}\-Escape\char`\"{} key). 
+
+
+
+Definition at line 423 of file ei\-\_\-application.\-c.
+
+\hypertarget{ei__application_8c_adf0b5ac3d996e47e37c65907671fb9b7}{\index{ei\-\_\-application.\-c@{ei\-\_\-application.\-c}!ei\-\_\-app\-\_\-root\-\_\-surface@{ei\-\_\-app\-\_\-root\-\_\-surface}}
+\index{ei\-\_\-app\-\_\-root\-\_\-surface@{ei\-\_\-app\-\_\-root\-\_\-surface}!ei_application.c@{ei\-\_\-application.\-c}}
+\subsubsection[{ei\-\_\-app\-\_\-root\-\_\-surface}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ei\-\_\-surface\-\_\-t} ei\-\_\-app\-\_\-root\-\_\-surface (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{ei__application_8c_adf0b5ac3d996e47e37c65907671fb9b7}
+
+
+Returns the surface of the root window. Used to create surfaces with similar r, g, b channels. 
+
+\begin{DoxyReturn}{Returns}
+The surface of the root window. 
+\end{DoxyReturn}
+
+
+Definition at line 443 of file ei\-\_\-application.\-c.
+
+\hypertarget{ei__application_8c_a97eeb53e6bac85cfb5f19f4baa77e114}{\index{ei\-\_\-application.\-c@{ei\-\_\-application.\-c}!ei\-\_\-app\-\_\-root\-\_\-widget@{ei\-\_\-app\-\_\-root\-\_\-widget}}
+\index{ei\-\_\-app\-\_\-root\-\_\-widget@{ei\-\_\-app\-\_\-root\-\_\-widget}!ei_application.c@{ei\-\_\-application.\-c}}
+\subsubsection[{ei\-\_\-app\-\_\-root\-\_\-widget}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ei\-\_\-widget\-\_\-t}$\ast$ ei\-\_\-app\-\_\-root\-\_\-widget (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{ei__application_8c_a97eeb53e6bac85cfb5f19f4baa77e114}
+
+
+Returns the \char`\"{}root widget\char`\"{} of the application\-: a \char`\"{}frame\char`\"{} widget that encapsulate the root window. 
+
+\begin{DoxyReturn}{Returns}
+The root widget. 
+\end{DoxyReturn}
+
+
+Definition at line 437 of file ei\-\_\-application.\-c.
+
+\hypertarget{ei__application_8c_a4b18dede5829aec0e5b246ccf66bf439}{\index{ei\-\_\-application.\-c@{ei\-\_\-application.\-c}!ei\-\_\-app\-\_\-run@{ei\-\_\-app\-\_\-run}}
+\index{ei\-\_\-app\-\_\-run@{ei\-\_\-app\-\_\-run}!ei_application.c@{ei\-\_\-application.\-c}}
+\subsubsection[{ei\-\_\-app\-\_\-run}]{\setlength{\rightskip}{0pt plus 5cm}void ei\-\_\-app\-\_\-run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{ei__application_8c_a4b18dede5829aec0e5b246ccf66bf439}
+
+
+Runs the application\-: enters the main event loop. Exits when \hyperlink{ei__application_8c_a05dff77e07ed2d7a896b14c15a939457}{ei\-\_\-app\-\_\-quit\-\_\-request} is called. 
+
+
+
+Definition at line 339 of file ei\-\_\-application.\-c.
+
+\hypertarget{ei__application_8c_a9f537e618260d5a5acc714d49ae26fe8}{\index{ei\-\_\-application.\-c@{ei\-\_\-application.\-c}!ei\-\_\-draw\-\_\-widget\-\_\-family@{ei\-\_\-draw\-\_\-widget\-\_\-family}}
+\index{ei\-\_\-draw\-\_\-widget\-\_\-family@{ei\-\_\-draw\-\_\-widget\-\_\-family}!ei_application.c@{ei\-\_\-application.\-c}}
+\subsubsection[{ei\-\_\-draw\-\_\-widget\-\_\-family}]{\setlength{\rightskip}{0pt plus 5cm}static void ei\-\_\-draw\-\_\-widget\-\_\-family (
+\begin{DoxyParamCaption}
+\item[{{\bf ei\-\_\-widget\-\_\-t} $\ast$}]{widget}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{ei__application_8c_a9f537e618260d5a5acc714d49ae26fe8}
+
+
+Definition at line 208 of file ei\-\_\-application.\-c.
+
+\hypertarget{ei__application_8c_a908e16a7c4c63a7db2286dfb0efe7a4a}{\index{ei\-\_\-application.\-c@{ei\-\_\-application.\-c}!ei\-\_\-execute\-\_\-callbacks@{ei\-\_\-execute\-\_\-callbacks}}
+\index{ei\-\_\-execute\-\_\-callbacks@{ei\-\_\-execute\-\_\-callbacks}!ei_application.c@{ei\-\_\-application.\-c}}
+\subsubsection[{ei\-\_\-execute\-\_\-callbacks}]{\setlength{\rightskip}{0pt plus 5cm}void ei\-\_\-execute\-\_\-callbacks (
+\begin{DoxyParamCaption}
+\item[{{\bf ei\-\_\-widget\-\_\-t} $\ast$}]{widget, }
+\item[{{\bf ei\-\_\-event\-\_\-t} $\ast$}]{event}
+\end{DoxyParamCaption}
+)}}\label{ei__application_8c_a908e16a7c4c63a7db2286dfb0efe7a4a}
+
+
+Definition at line 268 of file ei\-\_\-application.\-c.
+
+\hypertarget{ei__application_8c_a0ef8ee557666f4cd94bfcaca43428af3}{\index{ei\-\_\-application.\-c@{ei\-\_\-application.\-c}!ei\-\_\-redraw\-\_\-surfaces@{ei\-\_\-redraw\-\_\-surfaces}}
+\index{ei\-\_\-redraw\-\_\-surfaces@{ei\-\_\-redraw\-\_\-surfaces}!ei_application.c@{ei\-\_\-application.\-c}}
+\subsubsection[{ei\-\_\-redraw\-\_\-surfaces}]{\setlength{\rightskip}{0pt plus 5cm}void ei\-\_\-redraw\-\_\-surfaces (
+\begin{DoxyParamCaption}
+\item[{{\bf ei\-\_\-widget\-\_\-t} $\ast$}]{widget}
+\end{DoxyParamCaption}
+)}}\label{ei__application_8c_a0ef8ee557666f4cd94bfcaca43428af3}
+
+
+Definition at line 311 of file ei\-\_\-application.\-c.
+
+\hypertarget{ei__application_8c_a8fec11eb2a9f1985ea41dbeead7f4928}{\index{ei\-\_\-application.\-c@{ei\-\_\-application.\-c}!insertion\-\_\-tail@{insertion\-\_\-tail}}
+\index{insertion\-\_\-tail@{insertion\-\_\-tail}!ei_application.c@{ei\-\_\-application.\-c}}
+\subsubsection[{insertion\-\_\-tail}]{\setlength{\rightskip}{0pt plus 5cm}static void insertion\-\_\-tail (
+\begin{DoxyParamCaption}
+\item[{{\bf ei\-\_\-linked\-\_\-rect\-\_\-t} $\ast$}]{new\-\_\-rect}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{ei__application_8c_a8fec11eb2a9f1985ea41dbeead7f4928}
+
+
+Definition at line 95 of file ei\-\_\-application.\-c.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{ei__application_8c_a142683c82eaff993825c77d3598a0980}{\index{ei\-\_\-application.\-c@{ei\-\_\-application.\-c}!display\-\_\-surface@{display\-\_\-surface}}
+\index{display\-\_\-surface@{display\-\_\-surface}!ei_application.c@{ei\-\_\-application.\-c}}
+\subsubsection[{display\-\_\-surface}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ei\-\_\-surface\-\_\-t} display\-\_\-surface\hspace{0.3cm}{\ttfamily [static]}}}\label{ei__application_8c_a142683c82eaff993825c77d3598a0980}
+
+
+Definition at line 40 of file ei\-\_\-application.\-c.
+
+\hypertarget{ei__application_8c_af4e6243b9953aefc06cf3db0acba28b7}{\index{ei\-\_\-application.\-c@{ei\-\_\-application.\-c}!global\-\_\-geometry\-\_\-register@{global\-\_\-geometry\-\_\-register}}
+\index{global\-\_\-geometry\-\_\-register@{global\-\_\-geometry\-\_\-register}!ei_application.c@{ei\-\_\-application.\-c}}
+\subsubsection[{global\-\_\-geometry\-\_\-register}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ei\-\_\-geometrymanager\-\_\-t}$\ast$ global\-\_\-geometry\-\_\-register}}\label{ei__application_8c_af4e6243b9953aefc06cf3db0acba28b7}
+
+
+Definition at line 52 of file ei\-\_\-geometrymanager.\-c.
+
+\hypertarget{ei__application_8c_aad0318bb97fd141e63b33de613f9a9e0}{\index{ei\-\_\-application.\-c@{ei\-\_\-application.\-c}!global\-\_\-register\-\_\-list@{global\-\_\-register\-\_\-list}}
+\index{global\-\_\-register\-\_\-list@{global\-\_\-register\-\_\-list}!ei_application.c@{ei\-\_\-application.\-c}}
+\subsubsection[{global\-\_\-register\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ei\-\_\-widgetclass\-\_\-t}$\ast$ global\-\_\-register\-\_\-list}}\label{ei__application_8c_aad0318bb97fd141e63b33de613f9a9e0}
+
+
+Definition at line 25 of file ei\-\_\-widgetclass.\-c.
+
+\hypertarget{ei__application_8c_a05417b6ce783aad33443822917f4e5e0}{\index{ei\-\_\-application.\-c@{ei\-\_\-application.\-c}!offscreen\-\_\-surface@{offscreen\-\_\-surface}}
+\index{offscreen\-\_\-surface@{offscreen\-\_\-surface}!ei_application.c@{ei\-\_\-application.\-c}}
+\subsubsection[{offscreen\-\_\-surface}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ei\-\_\-surface\-\_\-t} offscreen\-\_\-surface}}\label{ei__application_8c_a05417b6ce783aad33443822917f4e5e0}
+
+
+Definition at line 43 of file ei\-\_\-application.\-c.
+
+\hypertarget{ei__application_8c_a1c80d85c454cb5ed4763766673a97cff}{\index{ei\-\_\-application.\-c@{ei\-\_\-application.\-c}!rects\-\_\-to\-\_\-update@{rects\-\_\-to\-\_\-update}}
+\index{rects\-\_\-to\-\_\-update@{rects\-\_\-to\-\_\-update}!ei_application.c@{ei\-\_\-application.\-c}}
+\subsubsection[{rects\-\_\-to\-\_\-update}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ei\-\_\-linked\-\_\-rect\-\_\-t}$\ast$ rects\-\_\-to\-\_\-update = N\-U\-L\-L\hspace{0.3cm}{\ttfamily [static]}}}\label{ei__application_8c_a1c80d85c454cb5ed4763766673a97cff}
+
+
+Definition at line 49 of file ei\-\_\-application.\-c.
+
+\hypertarget{ei__application_8c_adaae61cd8e607e6e21b009b373f0a074}{\index{ei\-\_\-application.\-c@{ei\-\_\-application.\-c}!root\-\_\-widget@{root\-\_\-widget}}
+\index{root\-\_\-widget@{root\-\_\-widget}!ei_application.c@{ei\-\_\-application.\-c}}
+\subsubsection[{root\-\_\-widget}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ei\-\_\-widget\-\_\-t}$\ast$ root\-\_\-widget\hspace{0.3cm}{\ttfamily [static]}}}\label{ei__application_8c_adaae61cd8e607e6e21b009b373f0a074}
+
+
+Definition at line 46 of file ei\-\_\-application.\-c.
+
+\hypertarget{ei__application_8c_ad31137eef972be3a296747ba8d3c0e9d}{\index{ei\-\_\-application.\-c@{ei\-\_\-application.\-c}!run\-\_\-app@{run\-\_\-app}}
+\index{run\-\_\-app@{run\-\_\-app}!ei_application.c@{ei\-\_\-application.\-c}}
+\subsubsection[{run\-\_\-app}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ei\-\_\-bool\-\_\-t} run\-\_\-app = {\bf E\-I\-\_\-\-T\-R\-U\-E}}}\label{ei__application_8c_ad31137eef972be3a296747ba8d3c0e9d}
+
+
+Definition at line 52 of file ei\-\_\-application.\-c.
+

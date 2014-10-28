@@ -1,0 +1,263 @@
+\hypertarget{ei__button__widget_8c}{\section{ei\-\_\-button\-\_\-widget.\-c File Reference}
+\label{ei__button__widget_8c}\index{ei\-\_\-button\-\_\-widget.\-c@{ei\-\_\-button\-\_\-widget.\-c}}
+}
+
+
+Definition and fonctions of the class \char`\"{}button\char`\"{}.  
+
+
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$math.\-h$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}ei\-\_\-button\-\_\-widget.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ei\-\_\-utils.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ei\-\_\-mouse.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ei\-\_\-application.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ei\-\_\-draw\-\_\-tools.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$ \hyperlink{ei__button__widget_8c_a0b38f3751cf3c39a2564302956a12ec1}{ei\-\_\-button\-\_\-allocfunc} ()
+\begin{DoxyCompactList}\small\item\em A function that allocates a block of memory that is big enough to store the attributes of the button widget. After allocation, the function {\itshape must} initialize the memory to 0. \end{DoxyCompactList}\item 
+void \hyperlink{ei__button__widget_8c_a2367d65d31a91a24813e491d91bcef87}{ei\-\_\-button\-\_\-releasefunc} (struct \hyperlink{structei__widget__t}{ei\-\_\-widget\-\_\-t} $\ast$widget)
+\begin{DoxyCompactList}\small\item\em A function that releases the memory used by a widget before it is destroyed. The \hyperlink{structei__widget__t}{ei\-\_\-widget\-\_\-t} structure itself, passed as parameter, must {\itshape not} by freed by these functions. Can be set to N\-U\-L\-L in \hyperlink{structei__widgetclass__t}{ei\-\_\-widgetclass\-\_\-t} if no memory is used by a class of widget. \end{DoxyCompactList}\item 
+void \hyperlink{ei__button__widget_8c_a2d890b4cd2e7e74691fd4a2dd4f123bb}{ei\-\_\-button\-\_\-setdefaultsfunc} (struct \hyperlink{structei__widget__t}{ei\-\_\-widget\-\_\-t} $\ast$widget)
+\begin{DoxyCompactList}\small\item\em A function that sets the default values for the class \char`\"{}button\char`\"{}. \end{DoxyCompactList}\item 
+static \hyperlink{structei__linked__point__t}{ei\-\_\-linked\-\_\-point\-\_\-t} $\ast$ \hyperlink{ei__button__widget_8c_a6da2182e7cc26a5d4dc77ed3662ebaa8}{ei\-\_\-arc} (\hyperlink{structei__point__t}{ei\-\_\-point\-\_\-t} centre, float R, float angledebut, float anglefin)
+\item 
+static \hyperlink{structei__linked__point__t}{ei\-\_\-linked\-\_\-point\-\_\-t} $\ast$ \hyperlink{ei__button__widget_8c_a7a5693dd22aa58910148e7573d4107de}{ei\-\_\-curvy\-\_\-contour\-\_\-button} (\hyperlink{ei__types_8h_a383b9af13bd6a0a893096ead3c4d8e28}{ei\-\_\-bool\-\_\-t} high, \hyperlink{ei__types_8h_a383b9af13bd6a0a893096ead3c4d8e28}{ei\-\_\-bool\-\_\-t} low, \hyperlink{structei__rect__t}{ei\-\_\-rect\-\_\-t} rect, float R, int border)
+\item 
+\hyperlink{ei__types_8h_a383b9af13bd6a0a893096ead3c4d8e28}{ei\-\_\-bool\-\_\-t} \hyperlink{ei__button__widget_8c_a94b7ca410686dec9dc493394260bc2f9}{ei\-\_\-raise\-\_\-button} (\hyperlink{structei__widget__t}{ei\-\_\-widget\-\_\-t} $\ast$widget, \hyperlink{structei__event__t}{ei\-\_\-event\-\_\-t} $\ast$event, void $\ast$user\-\_\-param)
+\item 
+\hyperlink{ei__types_8h_a383b9af13bd6a0a893096ead3c4d8e28}{ei\-\_\-bool\-\_\-t} \hyperlink{ei__button__widget_8c_aba39fab93e7a4cc48ad521abf36e5bf5}{ei\-\_\-sink\-\_\-button} (\hyperlink{structei__widget__t}{ei\-\_\-widget\-\_\-t} $\ast$widget, \hyperlink{structei__event__t}{ei\-\_\-event\-\_\-t} $\ast$event, void $\ast$user\-\_\-param)
+\item 
+\hyperlink{ei__types_8h_a383b9af13bd6a0a893096ead3c4d8e28}{ei\-\_\-bool\-\_\-t} \hyperlink{ei__button__widget_8c_ae5506b6012236ea2ec17e343ff2258e7}{ei\-\_\-toggle\-\_\-relief} (\hyperlink{structei__widget__t}{ei\-\_\-widget\-\_\-t} $\ast$widget, \hyperlink{structei__event__t}{ei\-\_\-event\-\_\-t} $\ast$event, void $\ast$user\-\_\-param)
+\item 
+\hyperlink{ei__types_8h_a383b9af13bd6a0a893096ead3c4d8e28}{ei\-\_\-bool\-\_\-t} \hyperlink{ei__button__widget_8c_aef178620e345735e73243d0731d4ec59}{ei\-\_\-reset\-\_\-all\-\_\-buttons\-\_\-rec} (\hyperlink{structei__widget__t}{ei\-\_\-widget\-\_\-t} $\ast$widget)
+\item 
+\hyperlink{ei__types_8h_a383b9af13bd6a0a893096ead3c4d8e28}{ei\-\_\-bool\-\_\-t} \hyperlink{ei__button__widget_8c_aa65a0bf44ac072e96f715ebc74c9a4fc}{ei\-\_\-reset\-\_\-all\-\_\-buttons} (\hyperlink{structei__widget__t}{ei\-\_\-widget\-\_\-t} $\ast$widget, \hyperlink{structei__event__t}{ei\-\_\-event\-\_\-t} $\ast$event, void $\ast$user\-\_\-param)
+\item 
+\hyperlink{ei__types_8h_a383b9af13bd6a0a893096ead3c4d8e28}{ei\-\_\-bool\-\_\-t} \hyperlink{ei__button__widget_8c_a00cdb5ca20b68b72c04d41af66371e6a}{ei\-\_\-button\-\_\-click} (\hyperlink{structei__widget__t}{ei\-\_\-widget\-\_\-t} $\ast$widget, \hyperlink{structei__event__t}{ei\-\_\-event\-\_\-t} $\ast$event, void $\ast$user\-\_\-param)
+\item 
+void \hyperlink{ei__button__widget_8c_a444f4929c4aa1d9e8b794a1601d534ff}{ei\-\_\-draw\-\_\-relief\-\_\-button} (struct \hyperlink{structei__widget__t}{ei\-\_\-widget\-\_\-t} $\ast$widget, \hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\-\_\-surface\-\_\-t} surface, \hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\-\_\-surface\-\_\-t} pick\-\_\-surface, \hyperlink{structei__rect__t}{ei\-\_\-rect\-\_\-t} $\ast$clipper)
+\item 
+void \hyperlink{ei__button__widget_8c_af05b5348a738fb5fc981e6c64e4d7e1d}{ei\-\_\-button\-\_\-drawfunc} (struct \hyperlink{structei__widget__t}{ei\-\_\-widget\-\_\-t} $\ast$widget, \hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\-\_\-surface\-\_\-t} surface, \hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\-\_\-surface\-\_\-t} pick\-\_\-surface, \hyperlink{structei__rect__t}{ei\-\_\-rect\-\_\-t} $\ast$clipper)
+\begin{DoxyCompactList}\small\item\em A function that draws widgets of the class \char`\"{}button\char`\"{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Definition and fonctions of the class \char`\"{}button\char`\"{}. \begin{DoxyAuthor}{Author}
+Equipe poulet 06.\-2014 
+\end{DoxyAuthor}
+
+
+Definition in file \hyperlink{ei__button__widget_8c_source}{ei\-\_\-button\-\_\-widget.\-c}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{ei__button__widget_8c_a6da2182e7cc26a5d4dc77ed3662ebaa8}{\index{ei\-\_\-button\-\_\-widget.\-c@{ei\-\_\-button\-\_\-widget.\-c}!ei\-\_\-arc@{ei\-\_\-arc}}
+\index{ei\-\_\-arc@{ei\-\_\-arc}!ei_button_widget.c@{ei\-\_\-button\-\_\-widget.\-c}}
+\subsubsection[{ei\-\_\-arc}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf ei\-\_\-linked\-\_\-point\-\_\-t}$\ast$ ei\-\_\-arc (
+\begin{DoxyParamCaption}
+\item[{{\bf ei\-\_\-point\-\_\-t}}]{centre, }
+\item[{float}]{R, }
+\item[{float}]{angledebut, }
+\item[{float}]{anglefin}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{ei__button__widget_8c_a6da2182e7cc26a5d4dc77ed3662ebaa8}
+
+
+Definition at line 98 of file ei\-\_\-button\-\_\-widget.\-c.
+
+\hypertarget{ei__button__widget_8c_a0b38f3751cf3c39a2564302956a12ec1}{\index{ei\-\_\-button\-\_\-widget.\-c@{ei\-\_\-button\-\_\-widget.\-c}!ei\-\_\-button\-\_\-allocfunc@{ei\-\_\-button\-\_\-allocfunc}}
+\index{ei\-\_\-button\-\_\-allocfunc@{ei\-\_\-button\-\_\-allocfunc}!ei_button_widget.c@{ei\-\_\-button\-\_\-widget.\-c}}
+\subsubsection[{ei\-\_\-button\-\_\-allocfunc}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ ei\-\_\-button\-\_\-allocfunc (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{ei__button__widget_8c_a0b38f3751cf3c39a2564302956a12ec1}
+
+
+A function that allocates a block of memory that is big enough to store the attributes of the button widget. After allocation, the function {\itshape must} initialize the memory to 0. 
+
+\begin{DoxyReturn}{Returns}
+A block of memory with all bytes set to 0. 
+\end{DoxyReturn}
+
+
+Definition at line 30 of file ei\-\_\-button\-\_\-widget.\-c.
+
+\hypertarget{ei__button__widget_8c_a00cdb5ca20b68b72c04d41af66371e6a}{\index{ei\-\_\-button\-\_\-widget.\-c@{ei\-\_\-button\-\_\-widget.\-c}!ei\-\_\-button\-\_\-click@{ei\-\_\-button\-\_\-click}}
+\index{ei\-\_\-button\-\_\-click@{ei\-\_\-button\-\_\-click}!ei_button_widget.c@{ei\-\_\-button\-\_\-widget.\-c}}
+\subsubsection[{ei\-\_\-button\-\_\-click}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ei\-\_\-bool\-\_\-t} ei\-\_\-button\-\_\-click (
+\begin{DoxyParamCaption}
+\item[{{\bf ei\-\_\-widget\-\_\-t} $\ast$}]{widget, }
+\item[{{\bf ei\-\_\-event\-\_\-t} $\ast$}]{event, }
+\item[{void $\ast$}]{user\-\_\-param}
+\end{DoxyParamCaption}
+)}}\label{ei__button__widget_8c_a00cdb5ca20b68b72c04d41af66371e6a}
+
+
+Definition at line 293 of file ei\-\_\-button\-\_\-widget.\-c.
+
+\hypertarget{ei__button__widget_8c_af05b5348a738fb5fc981e6c64e4d7e1d}{\index{ei\-\_\-button\-\_\-widget.\-c@{ei\-\_\-button\-\_\-widget.\-c}!ei\-\_\-button\-\_\-drawfunc@{ei\-\_\-button\-\_\-drawfunc}}
+\index{ei\-\_\-button\-\_\-drawfunc@{ei\-\_\-button\-\_\-drawfunc}!ei_button_widget.c@{ei\-\_\-button\-\_\-widget.\-c}}
+\subsubsection[{ei\-\_\-button\-\_\-drawfunc}]{\setlength{\rightskip}{0pt plus 5cm}void ei\-\_\-button\-\_\-drawfunc (
+\begin{DoxyParamCaption}
+\item[{struct {\bf ei\-\_\-widget\-\_\-t} $\ast$}]{widget, }
+\item[{{\bf ei\-\_\-surface\-\_\-t}}]{surface, }
+\item[{{\bf ei\-\_\-surface\-\_\-t}}]{pick\-\_\-surface, }
+\item[{{\bf ei\-\_\-rect\-\_\-t} $\ast$}]{clipper}
+\end{DoxyParamCaption}
+)}}\label{ei__button__widget_8c_af05b5348a738fb5fc981e6c64e4d7e1d}
+
+
+A function that draws widgets of the class \char`\"{}button\char`\"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em widget} & A pointer to the widget instance to draw. \\
+\hline
+{\em surface} & Where to draw the widget. The actual location of the widget in the surface is stored in its \char`\"{}screen\-\_\-location\char`\"{} field. \\
+\hline
+{\em clipper} & If not N\-U\-L\-L, the drawing is restricted within this rectangle (expressed in the surface reference frame). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 377 of file ei\-\_\-button\-\_\-widget.\-c.
+
+\hypertarget{ei__button__widget_8c_a2367d65d31a91a24813e491d91bcef87}{\index{ei\-\_\-button\-\_\-widget.\-c@{ei\-\_\-button\-\_\-widget.\-c}!ei\-\_\-button\-\_\-releasefunc@{ei\-\_\-button\-\_\-releasefunc}}
+\index{ei\-\_\-button\-\_\-releasefunc@{ei\-\_\-button\-\_\-releasefunc}!ei_button_widget.c@{ei\-\_\-button\-\_\-widget.\-c}}
+\subsubsection[{ei\-\_\-button\-\_\-releasefunc}]{\setlength{\rightskip}{0pt plus 5cm}void ei\-\_\-button\-\_\-releasefunc (
+\begin{DoxyParamCaption}
+\item[{struct {\bf ei\-\_\-widget\-\_\-t} $\ast$}]{widget}
+\end{DoxyParamCaption}
+)}}\label{ei__button__widget_8c_a2367d65d31a91a24813e491d91bcef87}
+
+
+A function that releases the memory used by a widget before it is destroyed. The \hyperlink{structei__widget__t}{ei\-\_\-widget\-\_\-t} structure itself, passed as parameter, must {\itshape not} by freed by these functions. Can be set to N\-U\-L\-L in \hyperlink{structei__widgetclass__t}{ei\-\_\-widgetclass\-\_\-t} if no memory is used by a class of widget. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em widget} & The widget which resources are to be freed. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 45 of file ei\-\_\-button\-\_\-widget.\-c.
+
+\hypertarget{ei__button__widget_8c_a2d890b4cd2e7e74691fd4a2dd4f123bb}{\index{ei\-\_\-button\-\_\-widget.\-c@{ei\-\_\-button\-\_\-widget.\-c}!ei\-\_\-button\-\_\-setdefaultsfunc@{ei\-\_\-button\-\_\-setdefaultsfunc}}
+\index{ei\-\_\-button\-\_\-setdefaultsfunc@{ei\-\_\-button\-\_\-setdefaultsfunc}!ei_button_widget.c@{ei\-\_\-button\-\_\-widget.\-c}}
+\subsubsection[{ei\-\_\-button\-\_\-setdefaultsfunc}]{\setlength{\rightskip}{0pt plus 5cm}void ei\-\_\-button\-\_\-setdefaultsfunc (
+\begin{DoxyParamCaption}
+\item[{struct {\bf ei\-\_\-widget\-\_\-t} $\ast$}]{widget}
+\end{DoxyParamCaption}
+)}}\label{ei__button__widget_8c_a2d890b4cd2e7e74691fd4a2dd4f123bb}
+
+
+A function that sets the default values for the class \char`\"{}button\char`\"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em widget} & A pointer to the widget instance to intialize. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 70 of file ei\-\_\-button\-\_\-widget.\-c.
+
+\hypertarget{ei__button__widget_8c_a7a5693dd22aa58910148e7573d4107de}{\index{ei\-\_\-button\-\_\-widget.\-c@{ei\-\_\-button\-\_\-widget.\-c}!ei\-\_\-curvy\-\_\-contour\-\_\-button@{ei\-\_\-curvy\-\_\-contour\-\_\-button}}
+\index{ei\-\_\-curvy\-\_\-contour\-\_\-button@{ei\-\_\-curvy\-\_\-contour\-\_\-button}!ei_button_widget.c@{ei\-\_\-button\-\_\-widget.\-c}}
+\subsubsection[{ei\-\_\-curvy\-\_\-contour\-\_\-button}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf ei\-\_\-linked\-\_\-point\-\_\-t}$\ast$ ei\-\_\-curvy\-\_\-contour\-\_\-button (
+\begin{DoxyParamCaption}
+\item[{{\bf ei\-\_\-bool\-\_\-t}}]{high, }
+\item[{{\bf ei\-\_\-bool\-\_\-t}}]{low, }
+\item[{{\bf ei\-\_\-rect\-\_\-t}}]{rect, }
+\item[{float}]{R, }
+\item[{int}]{border}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{ei__button__widget_8c_a7a5693dd22aa58910148e7573d4107de}
+
+
+Definition at line 138 of file ei\-\_\-button\-\_\-widget.\-c.
+
+\hypertarget{ei__button__widget_8c_a444f4929c4aa1d9e8b794a1601d534ff}{\index{ei\-\_\-button\-\_\-widget.\-c@{ei\-\_\-button\-\_\-widget.\-c}!ei\-\_\-draw\-\_\-relief\-\_\-button@{ei\-\_\-draw\-\_\-relief\-\_\-button}}
+\index{ei\-\_\-draw\-\_\-relief\-\_\-button@{ei\-\_\-draw\-\_\-relief\-\_\-button}!ei_button_widget.c@{ei\-\_\-button\-\_\-widget.\-c}}
+\subsubsection[{ei\-\_\-draw\-\_\-relief\-\_\-button}]{\setlength{\rightskip}{0pt plus 5cm}void ei\-\_\-draw\-\_\-relief\-\_\-button (
+\begin{DoxyParamCaption}
+\item[{struct {\bf ei\-\_\-widget\-\_\-t} $\ast$}]{widget, }
+\item[{{\bf ei\-\_\-surface\-\_\-t}}]{surface, }
+\item[{{\bf ei\-\_\-surface\-\_\-t}}]{pick\-\_\-surface, }
+\item[{{\bf ei\-\_\-rect\-\_\-t} $\ast$}]{clipper}
+\end{DoxyParamCaption}
+)}}\label{ei__button__widget_8c_a444f4929c4aa1d9e8b794a1601d534ff}
+
+
+Definition at line 309 of file ei\-\_\-button\-\_\-widget.\-c.
+
+\hypertarget{ei__button__widget_8c_a94b7ca410686dec9dc493394260bc2f9}{\index{ei\-\_\-button\-\_\-widget.\-c@{ei\-\_\-button\-\_\-widget.\-c}!ei\-\_\-raise\-\_\-button@{ei\-\_\-raise\-\_\-button}}
+\index{ei\-\_\-raise\-\_\-button@{ei\-\_\-raise\-\_\-button}!ei_button_widget.c@{ei\-\_\-button\-\_\-widget.\-c}}
+\subsubsection[{ei\-\_\-raise\-\_\-button}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ei\-\_\-bool\-\_\-t} ei\-\_\-raise\-\_\-button (
+\begin{DoxyParamCaption}
+\item[{{\bf ei\-\_\-widget\-\_\-t} $\ast$}]{widget, }
+\item[{{\bf ei\-\_\-event\-\_\-t} $\ast$}]{event, }
+\item[{void $\ast$}]{user\-\_\-param}
+\end{DoxyParamCaption}
+)}}\label{ei__button__widget_8c_a94b7ca410686dec9dc493394260bc2f9}
+
+
+Definition at line 250 of file ei\-\_\-button\-\_\-widget.\-c.
+
+\hypertarget{ei__button__widget_8c_aa65a0bf44ac072e96f715ebc74c9a4fc}{\index{ei\-\_\-button\-\_\-widget.\-c@{ei\-\_\-button\-\_\-widget.\-c}!ei\-\_\-reset\-\_\-all\-\_\-buttons@{ei\-\_\-reset\-\_\-all\-\_\-buttons}}
+\index{ei\-\_\-reset\-\_\-all\-\_\-buttons@{ei\-\_\-reset\-\_\-all\-\_\-buttons}!ei_button_widget.c@{ei\-\_\-button\-\_\-widget.\-c}}
+\subsubsection[{ei\-\_\-reset\-\_\-all\-\_\-buttons}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ei\-\_\-bool\-\_\-t} ei\-\_\-reset\-\_\-all\-\_\-buttons (
+\begin{DoxyParamCaption}
+\item[{{\bf ei\-\_\-widget\-\_\-t} $\ast$}]{widget, }
+\item[{{\bf ei\-\_\-event\-\_\-t} $\ast$}]{event, }
+\item[{void $\ast$}]{user\-\_\-param}
+\end{DoxyParamCaption}
+)}}\label{ei__button__widget_8c_aa65a0bf44ac072e96f715ebc74c9a4fc}
+
+
+Definition at line 287 of file ei\-\_\-button\-\_\-widget.\-c.
+
+\hypertarget{ei__button__widget_8c_aef178620e345735e73243d0731d4ec59}{\index{ei\-\_\-button\-\_\-widget.\-c@{ei\-\_\-button\-\_\-widget.\-c}!ei\-\_\-reset\-\_\-all\-\_\-buttons\-\_\-rec@{ei\-\_\-reset\-\_\-all\-\_\-buttons\-\_\-rec}}
+\index{ei\-\_\-reset\-\_\-all\-\_\-buttons\-\_\-rec@{ei\-\_\-reset\-\_\-all\-\_\-buttons\-\_\-rec}!ei_button_widget.c@{ei\-\_\-button\-\_\-widget.\-c}}
+\subsubsection[{ei\-\_\-reset\-\_\-all\-\_\-buttons\-\_\-rec}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ei\-\_\-bool\-\_\-t} ei\-\_\-reset\-\_\-all\-\_\-buttons\-\_\-rec (
+\begin{DoxyParamCaption}
+\item[{{\bf ei\-\_\-widget\-\_\-t} $\ast$}]{widget}
+\end{DoxyParamCaption}
+)}}\label{ei__button__widget_8c_aef178620e345735e73243d0731d4ec59}
+
+
+Definition at line 271 of file ei\-\_\-button\-\_\-widget.\-c.
+
+\hypertarget{ei__button__widget_8c_aba39fab93e7a4cc48ad521abf36e5bf5}{\index{ei\-\_\-button\-\_\-widget.\-c@{ei\-\_\-button\-\_\-widget.\-c}!ei\-\_\-sink\-\_\-button@{ei\-\_\-sink\-\_\-button}}
+\index{ei\-\_\-sink\-\_\-button@{ei\-\_\-sink\-\_\-button}!ei_button_widget.c@{ei\-\_\-button\-\_\-widget.\-c}}
+\subsubsection[{ei\-\_\-sink\-\_\-button}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ei\-\_\-bool\-\_\-t} ei\-\_\-sink\-\_\-button (
+\begin{DoxyParamCaption}
+\item[{{\bf ei\-\_\-widget\-\_\-t} $\ast$}]{widget, }
+\item[{{\bf ei\-\_\-event\-\_\-t} $\ast$}]{event, }
+\item[{void $\ast$}]{user\-\_\-param}
+\end{DoxyParamCaption}
+)}}\label{ei__button__widget_8c_aba39fab93e7a4cc48ad521abf36e5bf5}
+
+
+Definition at line 256 of file ei\-\_\-button\-\_\-widget.\-c.
+
+\hypertarget{ei__button__widget_8c_ae5506b6012236ea2ec17e343ff2258e7}{\index{ei\-\_\-button\-\_\-widget.\-c@{ei\-\_\-button\-\_\-widget.\-c}!ei\-\_\-toggle\-\_\-relief@{ei\-\_\-toggle\-\_\-relief}}
+\index{ei\-\_\-toggle\-\_\-relief@{ei\-\_\-toggle\-\_\-relief}!ei_button_widget.c@{ei\-\_\-button\-\_\-widget.\-c}}
+\subsubsection[{ei\-\_\-toggle\-\_\-relief}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ei\-\_\-bool\-\_\-t} ei\-\_\-toggle\-\_\-relief (
+\begin{DoxyParamCaption}
+\item[{{\bf ei\-\_\-widget\-\_\-t} $\ast$}]{widget, }
+\item[{{\bf ei\-\_\-event\-\_\-t} $\ast$}]{event, }
+\item[{void $\ast$}]{user\-\_\-param}
+\end{DoxyParamCaption}
+)}}\label{ei__button__widget_8c_ae5506b6012236ea2ec17e343ff2258e7}
+
+
+Definition at line 262 of file ei\-\_\-button\-\_\-widget.\-c.
+

@@ -1,0 +1,159 @@
+\hypertarget{ei__toplevel__widget_8c}{\section{ei\-\_\-toplevel\-\_\-widget.\-c File Reference}
+\label{ei__toplevel__widget_8c}\index{ei\-\_\-toplevel\-\_\-widget.\-c@{ei\-\_\-toplevel\-\_\-widget.\-c}}
+}
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}ei\-\_\-toplevel\-\_\-widget.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ei\-\_\-utils.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ei\-\_\-geometrymanager.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ei\-\_\-application.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ei\-\_\-types.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ei\-\_\-draw\-\_\-tools.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ei\-\_\-mouse.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ei\-\_\-draw.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ei\-\_\-frame\-\_\-widget.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$ \hyperlink{ei__toplevel__widget_8c_a09c9a142a28ff1dc594bdb839ec72394}{ei\-\_\-toplevel\-\_\-allocfunc} ()
+\begin{DoxyCompactList}\small\item\em A function that allocates a block of memory that is big enough to store the attributes of the toplevel widget. After allocation, the function {\itshape must} initialize the memory to 0. \end{DoxyCompactList}\item 
+void \hyperlink{ei__toplevel__widget_8c_a467532deb9ddf43efe4aba570d768ff3}{ei\-\_\-toplevel\-\_\-releasefunc} (struct \hyperlink{structei__widget__t}{ei\-\_\-widget\-\_\-t} $\ast$widget)
+\begin{DoxyCompactList}\small\item\em A function that releases the memory used by a widget before it is destroyed. The \hyperlink{structei__widget__t}{ei\-\_\-widget\-\_\-t} structure itself, passed as parameter, must {\itshape not} by freed by these functions. Can be set to N\-U\-L\-L in \hyperlink{structei__widgetclass__t}{ei\-\_\-widgetclass\-\_\-t} if no memory is used by a class of widget. \end{DoxyCompactList}\item 
+void \hyperlink{ei__toplevel__widget_8c_a269bfbe1b0696d6e4c3e0a4b555d458b}{ei\-\_\-toplevel\-\_\-setdefaultsfunc} (struct \hyperlink{structei__widget__t}{ei\-\_\-widget\-\_\-t} $\ast$widget)
+\begin{DoxyCompactList}\small\item\em A function that sets the default values for the class \char`\"{}toplevel\char`\"{}. \end{DoxyCompactList}\item 
+\hyperlink{ei__types_8h_a383b9af13bd6a0a893096ead3c4d8e28}{ei\-\_\-bool\-\_\-t} \hyperlink{ei__toplevel__widget_8c_ae160848ba8f972134794f25e839767c6}{ei\-\_\-toplevel\-\_\-close} (\hyperlink{structei__widget__t}{ei\-\_\-widget\-\_\-t} $\ast$widget, \hyperlink{structei__event__t}{ei\-\_\-event\-\_\-t} $\ast$event, void $\ast$user\-\_\-param)
+\item 
+void \hyperlink{ei__toplevel__widget_8c_a5c4e36c6b114f02870c6a158e218185f}{ei\-\_\-toplevel\-\_\-drawfunc} (struct \hyperlink{structei__widget__t}{ei\-\_\-widget\-\_\-t} $\ast$widget, \hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\-\_\-surface\-\_\-t} surface, \hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\-\_\-surface\-\_\-t} pick\-\_\-surface, \hyperlink{structei__rect__t}{ei\-\_\-rect\-\_\-t} $\ast$clipper)
+\begin{DoxyCompactList}\small\item\em A function that draws widgets of the class \char`\"{}toplevel\char`\"{}. \end{DoxyCompactList}\item 
+\hyperlink{ei__types_8h_a383b9af13bd6a0a893096ead3c4d8e28}{ei\-\_\-bool\-\_\-t} \hyperlink{ei__toplevel__widget_8c_a833c38871f77f9dcf56cfc1d531cf8c7}{ei\-\_\-toplevel\-\_\-drag} (\hyperlink{structei__widget__t}{ei\-\_\-widget\-\_\-t} $\ast$widget, \hyperlink{structei__event__t}{ei\-\_\-event\-\_\-t} $\ast$event, void $\ast$user\-\_\-param)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint32\-\_\-t \hyperlink{ei__toplevel__widget_8c_aa35e8869446c649e1eb5e32508d88ae1}{titlebar\-\_\-height}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{ei__toplevel__widget_8c_a09c9a142a28ff1dc594bdb839ec72394}{\index{ei\-\_\-toplevel\-\_\-widget.\-c@{ei\-\_\-toplevel\-\_\-widget.\-c}!ei\-\_\-toplevel\-\_\-allocfunc@{ei\-\_\-toplevel\-\_\-allocfunc}}
+\index{ei\-\_\-toplevel\-\_\-allocfunc@{ei\-\_\-toplevel\-\_\-allocfunc}!ei_toplevel_widget.c@{ei\-\_\-toplevel\-\_\-widget.\-c}}
+\subsubsection[{ei\-\_\-toplevel\-\_\-allocfunc}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ ei\-\_\-toplevel\-\_\-allocfunc (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{ei__toplevel__widget_8c_a09c9a142a28ff1dc594bdb839ec72394}
+
+
+A function that allocates a block of memory that is big enough to store the attributes of the toplevel widget. After allocation, the function {\itshape must} initialize the memory to 0. 
+
+\begin{DoxyReturn}{Returns}
+A block of memory with all bytes set to 0. 
+\end{DoxyReturn}
+
+
+Definition at line 29 of file ei\-\_\-toplevel\-\_\-widget.\-c.
+
+\hypertarget{ei__toplevel__widget_8c_ae160848ba8f972134794f25e839767c6}{\index{ei\-\_\-toplevel\-\_\-widget.\-c@{ei\-\_\-toplevel\-\_\-widget.\-c}!ei\-\_\-toplevel\-\_\-close@{ei\-\_\-toplevel\-\_\-close}}
+\index{ei\-\_\-toplevel\-\_\-close@{ei\-\_\-toplevel\-\_\-close}!ei_toplevel_widget.c@{ei\-\_\-toplevel\-\_\-widget.\-c}}
+\subsubsection[{ei\-\_\-toplevel\-\_\-close}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ei\-\_\-bool\-\_\-t} ei\-\_\-toplevel\-\_\-close (
+\begin{DoxyParamCaption}
+\item[{{\bf ei\-\_\-widget\-\_\-t} $\ast$}]{widget, }
+\item[{{\bf ei\-\_\-event\-\_\-t} $\ast$}]{event, }
+\item[{void $\ast$}]{user\-\_\-param}
+\end{DoxyParamCaption}
+)}}\label{ei__toplevel__widget_8c_ae160848ba8f972134794f25e839767c6}
+
+
+Definition at line 68 of file ei\-\_\-toplevel\-\_\-widget.\-c.
+
+\hypertarget{ei__toplevel__widget_8c_a833c38871f77f9dcf56cfc1d531cf8c7}{\index{ei\-\_\-toplevel\-\_\-widget.\-c@{ei\-\_\-toplevel\-\_\-widget.\-c}!ei\-\_\-toplevel\-\_\-drag@{ei\-\_\-toplevel\-\_\-drag}}
+\index{ei\-\_\-toplevel\-\_\-drag@{ei\-\_\-toplevel\-\_\-drag}!ei_toplevel_widget.c@{ei\-\_\-toplevel\-\_\-widget.\-c}}
+\subsubsection[{ei\-\_\-toplevel\-\_\-drag}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ei\-\_\-bool\-\_\-t} ei\-\_\-toplevel\-\_\-drag (
+\begin{DoxyParamCaption}
+\item[{{\bf ei\-\_\-widget\-\_\-t} $\ast$}]{widget, }
+\item[{{\bf ei\-\_\-event\-\_\-t} $\ast$}]{event, }
+\item[{void $\ast$}]{user\-\_\-param}
+\end{DoxyParamCaption}
+)}}\label{ei__toplevel__widget_8c_a833c38871f77f9dcf56cfc1d531cf8c7}
+
+
+Definition at line 153 of file ei\-\_\-toplevel\-\_\-widget.\-c.
+
+\hypertarget{ei__toplevel__widget_8c_a5c4e36c6b114f02870c6a158e218185f}{\index{ei\-\_\-toplevel\-\_\-widget.\-c@{ei\-\_\-toplevel\-\_\-widget.\-c}!ei\-\_\-toplevel\-\_\-drawfunc@{ei\-\_\-toplevel\-\_\-drawfunc}}
+\index{ei\-\_\-toplevel\-\_\-drawfunc@{ei\-\_\-toplevel\-\_\-drawfunc}!ei_toplevel_widget.c@{ei\-\_\-toplevel\-\_\-widget.\-c}}
+\subsubsection[{ei\-\_\-toplevel\-\_\-drawfunc}]{\setlength{\rightskip}{0pt plus 5cm}void ei\-\_\-toplevel\-\_\-drawfunc (
+\begin{DoxyParamCaption}
+\item[{struct {\bf ei\-\_\-widget\-\_\-t} $\ast$}]{widget, }
+\item[{{\bf ei\-\_\-surface\-\_\-t}}]{surface, }
+\item[{{\bf ei\-\_\-surface\-\_\-t}}]{pick\-\_\-surface, }
+\item[{{\bf ei\-\_\-rect\-\_\-t} $\ast$}]{clipper}
+\end{DoxyParamCaption}
+)}}\label{ei__toplevel__widget_8c_a5c4e36c6b114f02870c6a158e218185f}
+
+
+A function that draws widgets of the class \char`\"{}toplevel\char`\"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em widget} & A pointer to the widget instance to draw. \\
+\hline
+{\em surface} & Where to draw the widget. The actual location of the widget in the surface is stored in its \char`\"{}screen\-\_\-location\char`\"{} field. \\
+\hline
+{\em clipper} & If not N\-U\-L\-L, the drawing is restricted within this rectangle (expressed in the surface reference frame). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 77 of file ei\-\_\-toplevel\-\_\-widget.\-c.
+
+\hypertarget{ei__toplevel__widget_8c_a467532deb9ddf43efe4aba570d768ff3}{\index{ei\-\_\-toplevel\-\_\-widget.\-c@{ei\-\_\-toplevel\-\_\-widget.\-c}!ei\-\_\-toplevel\-\_\-releasefunc@{ei\-\_\-toplevel\-\_\-releasefunc}}
+\index{ei\-\_\-toplevel\-\_\-releasefunc@{ei\-\_\-toplevel\-\_\-releasefunc}!ei_toplevel_widget.c@{ei\-\_\-toplevel\-\_\-widget.\-c}}
+\subsubsection[{ei\-\_\-toplevel\-\_\-releasefunc}]{\setlength{\rightskip}{0pt plus 5cm}void ei\-\_\-toplevel\-\_\-releasefunc (
+\begin{DoxyParamCaption}
+\item[{struct {\bf ei\-\_\-widget\-\_\-t} $\ast$}]{widget}
+\end{DoxyParamCaption}
+)}}\label{ei__toplevel__widget_8c_a467532deb9ddf43efe4aba570d768ff3}
+
+
+A function that releases the memory used by a widget before it is destroyed. The \hyperlink{structei__widget__t}{ei\-\_\-widget\-\_\-t} structure itself, passed as parameter, must {\itshape not} by freed by these functions. Can be set to N\-U\-L\-L in \hyperlink{structei__widgetclass__t}{ei\-\_\-widgetclass\-\_\-t} if no memory is used by a class of widget. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em widget} & The widget which resources are to be freed. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 38 of file ei\-\_\-toplevel\-\_\-widget.\-c.
+
+\hypertarget{ei__toplevel__widget_8c_a269bfbe1b0696d6e4c3e0a4b555d458b}{\index{ei\-\_\-toplevel\-\_\-widget.\-c@{ei\-\_\-toplevel\-\_\-widget.\-c}!ei\-\_\-toplevel\-\_\-setdefaultsfunc@{ei\-\_\-toplevel\-\_\-setdefaultsfunc}}
+\index{ei\-\_\-toplevel\-\_\-setdefaultsfunc@{ei\-\_\-toplevel\-\_\-setdefaultsfunc}!ei_toplevel_widget.c@{ei\-\_\-toplevel\-\_\-widget.\-c}}
+\subsubsection[{ei\-\_\-toplevel\-\_\-setdefaultsfunc}]{\setlength{\rightskip}{0pt plus 5cm}void ei\-\_\-toplevel\-\_\-setdefaultsfunc (
+\begin{DoxyParamCaption}
+\item[{struct {\bf ei\-\_\-widget\-\_\-t} $\ast$}]{widget}
+\end{DoxyParamCaption}
+)}}\label{ei__toplevel__widget_8c_a269bfbe1b0696d6e4c3e0a4b555d458b}
+
+
+A function that sets the default values for the class \char`\"{}toplevel\char`\"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em widget} & A pointer to the widget instance to intialize. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 51 of file ei\-\_\-toplevel\-\_\-widget.\-c.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{ei__toplevel__widget_8c_aa35e8869446c649e1eb5e32508d88ae1}{\index{ei\-\_\-toplevel\-\_\-widget.\-c@{ei\-\_\-toplevel\-\_\-widget.\-c}!titlebar\-\_\-height@{titlebar\-\_\-height}}
+\index{titlebar\-\_\-height@{titlebar\-\_\-height}!ei_toplevel_widget.c@{ei\-\_\-toplevel\-\_\-widget.\-c}}
+\subsubsection[{titlebar\-\_\-height}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t titlebar\-\_\-height}}\label{ei__toplevel__widget_8c_aa35e8869446c649e1eb5e32508d88ae1}
+
+
+Definition at line 36 of file ei\-\_\-widget.\-c.
+

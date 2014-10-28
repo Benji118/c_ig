@@ -1,0 +1,152 @@
+\hypertarget{ei__draw__tools_8c}{\section{ei\-\_\-draw\-\_\-tools.\-c File Reference}
+\label{ei__draw__tools_8c}\index{ei\-\_\-draw\-\_\-tools.\-c@{ei\-\_\-draw\-\_\-tools.\-c}}
+}
+
+
+Tools to draw widget.  
+
+
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$math.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}ei\-\_\-draw\-\_\-tools.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}hw\-\_\-interface.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ei\-\_\-draw.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ei\-\_\-utils.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ei\-\_\-application.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structei__linked__point__t}{ei\-\_\-linked\-\_\-point\-\_\-t} $\ast$ \hyperlink{ei__draw__tools_8c_a79541eef707d99c270cb10f32f455632}{ei\-\_\-frame\-\_\-calculation} (\hyperlink{structei__widget__t}{ei\-\_\-widget\-\_\-t} $\ast$widget, int border\-\_\-width)
+\item 
+void \hyperlink{ei__draw__tools_8c_a953b7d2b73fb007a8cb6b73260a48242}{ei\-\_\-free\-\_\-linked\-\_\-points\-\_\-list} (\hyperlink{structei__linked__point__t}{ei\-\_\-linked\-\_\-point\-\_\-t} $\ast$liste)
+\item 
+void \hyperlink{ei__draw__tools_8c_adf769b4319d94e8540700c3854fb98a0}{concat\-\_\-lists} (\hyperlink{structei__linked__point__t}{ei\-\_\-linked\-\_\-point\-\_\-t} $\ast$$\ast$liste1, \hyperlink{structei__linked__point__t}{ei\-\_\-linked\-\_\-point\-\_\-t} $\ast$$\ast$liste2)
+\item 
+\hyperlink{structei__color__t}{ei\-\_\-color\-\_\-t} \hyperlink{ei__draw__tools_8c_ac5d3a651cc5809c8281af9f2a738b92e}{ei\-\_\-clearer\-\_\-color} (\hyperlink{structei__color__t}{ei\-\_\-color\-\_\-t} color)
+\item 
+static void \hyperlink{ei__draw__tools_8c_acd872fbe31f8a9fcb44b3a58f85a0f28}{ei\-\_\-switch\-\_\-anchor} (\hyperlink{ei__types_8h_a3852c963af609d31d7cfcff79c4c8450}{ei\-\_\-anchor\-\_\-t} anchor, \hyperlink{structei__point__t}{ei\-\_\-point\-\_\-t} $\ast$topleft, \hyperlink{structei__size__t}{ei\-\_\-size\-\_\-t} size, \hyperlink{structei__point__t}{ei\-\_\-point\-\_\-t} wtopleft, \hyperlink{structei__size__t}{ei\-\_\-size\-\_\-t} wsize)
+\item 
+void \hyperlink{ei__draw__tools_8c_a41c889ca15cc8611e5aa9598358ecac2}{ei\-\_\-draw\-\_\-widget\-\_\-text} (\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\-\_\-surface\-\_\-t} surface, \hyperlink{structei__widget__t}{ei\-\_\-widget\-\_\-t} $\ast$widget, char $\ast$text, \hyperlink{ei__types_8h_a22c8198e4d641e4bc67bb17f9c6bcda7}{ei\-\_\-font\-\_\-t} text\-\_\-font, \hyperlink{structei__color__t}{ei\-\_\-color\-\_\-t} text\-\_\-color, \hyperlink{ei__types_8h_a3852c963af609d31d7cfcff79c4c8450}{ei\-\_\-anchor\-\_\-t} anchor)
+\item 
+\hyperlink{structei__rect__t}{ei\-\_\-rect\-\_\-t} \hyperlink{ei__draw__tools_8c_a747200632b61638bd31931e604fe47fb}{ei\-\_\-rectangles\-\_\-intersect} (\hyperlink{structei__rect__t}{ei\-\_\-rect\-\_\-t} a, \hyperlink{structei__rect__t}{ei\-\_\-rect\-\_\-t} b)
+\item 
+void \hyperlink{ei__draw__tools_8c_ade1684e5c18463949595778412dd3d3f}{ei\-\_\-draw\-\_\-widget\-\_\-img} (\hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\-\_\-surface\-\_\-t} surface, \hyperlink{structei__widget__t}{ei\-\_\-widget\-\_\-t} $\ast$widget, \hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\-\_\-surface\-\_\-t} img, \hyperlink{structei__rect__t}{ei\-\_\-rect\-\_\-t} $\ast$img\-\_\-rect, \hyperlink{ei__types_8h_a3852c963af609d31d7cfcff79c4c8450}{ei\-\_\-anchor\-\_\-t} anchor)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Tools to draw widget. \begin{DoxyAuthor}{Author}
+Equipe poulet 06.\-2014 
+\end{DoxyAuthor}
+
+
+Definition in file \hyperlink{ei__draw__tools_8c_source}{ei\-\_\-draw\-\_\-tools.\-c}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{ei__draw__tools_8c_adf769b4319d94e8540700c3854fb98a0}{\index{ei\-\_\-draw\-\_\-tools.\-c@{ei\-\_\-draw\-\_\-tools.\-c}!concat\-\_\-lists@{concat\-\_\-lists}}
+\index{concat\-\_\-lists@{concat\-\_\-lists}!ei_draw_tools.c@{ei\-\_\-draw\-\_\-tools.\-c}}
+\subsubsection[{concat\-\_\-lists}]{\setlength{\rightskip}{0pt plus 5cm}void concat\-\_\-lists (
+\begin{DoxyParamCaption}
+\item[{{\bf ei\-\_\-linked\-\_\-point\-\_\-t} $\ast$$\ast$}]{liste1, }
+\item[{{\bf ei\-\_\-linked\-\_\-point\-\_\-t} $\ast$$\ast$}]{liste2}
+\end{DoxyParamCaption}
+)}}\label{ei__draw__tools_8c_adf769b4319d94e8540700c3854fb98a0}
+
+
+Definition at line 84 of file ei\-\_\-draw\-\_\-tools.\-c.
+
+\hypertarget{ei__draw__tools_8c_ac5d3a651cc5809c8281af9f2a738b92e}{\index{ei\-\_\-draw\-\_\-tools.\-c@{ei\-\_\-draw\-\_\-tools.\-c}!ei\-\_\-clearer\-\_\-color@{ei\-\_\-clearer\-\_\-color}}
+\index{ei\-\_\-clearer\-\_\-color@{ei\-\_\-clearer\-\_\-color}!ei_draw_tools.c@{ei\-\_\-draw\-\_\-tools.\-c}}
+\subsubsection[{ei\-\_\-clearer\-\_\-color}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ei\-\_\-color\-\_\-t} ei\-\_\-clearer\-\_\-color (
+\begin{DoxyParamCaption}
+\item[{{\bf ei\-\_\-color\-\_\-t}}]{color}
+\end{DoxyParamCaption}
+)}}\label{ei__draw__tools_8c_ac5d3a651cc5809c8281af9f2a738b92e}
+
+
+Definition at line 111 of file ei\-\_\-draw\-\_\-tools.\-c.
+
+\hypertarget{ei__draw__tools_8c_ade1684e5c18463949595778412dd3d3f}{\index{ei\-\_\-draw\-\_\-tools.\-c@{ei\-\_\-draw\-\_\-tools.\-c}!ei\-\_\-draw\-\_\-widget\-\_\-img@{ei\-\_\-draw\-\_\-widget\-\_\-img}}
+\index{ei\-\_\-draw\-\_\-widget\-\_\-img@{ei\-\_\-draw\-\_\-widget\-\_\-img}!ei_draw_tools.c@{ei\-\_\-draw\-\_\-tools.\-c}}
+\subsubsection[{ei\-\_\-draw\-\_\-widget\-\_\-img}]{\setlength{\rightskip}{0pt plus 5cm}void ei\-\_\-draw\-\_\-widget\-\_\-img (
+\begin{DoxyParamCaption}
+\item[{{\bf ei\-\_\-surface\-\_\-t}}]{surface, }
+\item[{{\bf ei\-\_\-widget\-\_\-t} $\ast$}]{widget, }
+\item[{{\bf ei\-\_\-surface\-\_\-t}}]{img, }
+\item[{{\bf ei\-\_\-rect\-\_\-t} $\ast$}]{img\-\_\-rect, }
+\item[{{\bf ei\-\_\-anchor\-\_\-t}}]{anchor}
+\end{DoxyParamCaption}
+)}}\label{ei__draw__tools_8c_ade1684e5c18463949595778412dd3d3f}
+
+
+Definition at line 228 of file ei\-\_\-draw\-\_\-tools.\-c.
+
+\hypertarget{ei__draw__tools_8c_a41c889ca15cc8611e5aa9598358ecac2}{\index{ei\-\_\-draw\-\_\-tools.\-c@{ei\-\_\-draw\-\_\-tools.\-c}!ei\-\_\-draw\-\_\-widget\-\_\-text@{ei\-\_\-draw\-\_\-widget\-\_\-text}}
+\index{ei\-\_\-draw\-\_\-widget\-\_\-text@{ei\-\_\-draw\-\_\-widget\-\_\-text}!ei_draw_tools.c@{ei\-\_\-draw\-\_\-tools.\-c}}
+\subsubsection[{ei\-\_\-draw\-\_\-widget\-\_\-text}]{\setlength{\rightskip}{0pt plus 5cm}void ei\-\_\-draw\-\_\-widget\-\_\-text (
+\begin{DoxyParamCaption}
+\item[{{\bf ei\-\_\-surface\-\_\-t}}]{surface, }
+\item[{{\bf ei\-\_\-widget\-\_\-t} $\ast$}]{widget, }
+\item[{char $\ast$}]{text, }
+\item[{{\bf ei\-\_\-font\-\_\-t}}]{text\-\_\-font, }
+\item[{{\bf ei\-\_\-color\-\_\-t}}]{text\-\_\-color, }
+\item[{{\bf ei\-\_\-anchor\-\_\-t}}]{anchor}
+\end{DoxyParamCaption}
+)}}\label{ei__draw__tools_8c_a41c889ca15cc8611e5aa9598358ecac2}
+
+
+Definition at line 178 of file ei\-\_\-draw\-\_\-tools.\-c.
+
+\hypertarget{ei__draw__tools_8c_a79541eef707d99c270cb10f32f455632}{\index{ei\-\_\-draw\-\_\-tools.\-c@{ei\-\_\-draw\-\_\-tools.\-c}!ei\-\_\-frame\-\_\-calculation@{ei\-\_\-frame\-\_\-calculation}}
+\index{ei\-\_\-frame\-\_\-calculation@{ei\-\_\-frame\-\_\-calculation}!ei_draw_tools.c@{ei\-\_\-draw\-\_\-tools.\-c}}
+\subsubsection[{ei\-\_\-frame\-\_\-calculation}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ei\-\_\-linked\-\_\-point\-\_\-t}$\ast$ ei\-\_\-frame\-\_\-calculation (
+\begin{DoxyParamCaption}
+\item[{{\bf ei\-\_\-widget\-\_\-t} $\ast$}]{widget, }
+\item[{int}]{border\-\_\-width}
+\end{DoxyParamCaption}
+)}}\label{ei__draw__tools_8c_a79541eef707d99c270cb10f32f455632}
+
+
+Definition at line 33 of file ei\-\_\-draw\-\_\-tools.\-c.
+
+\hypertarget{ei__draw__tools_8c_a953b7d2b73fb007a8cb6b73260a48242}{\index{ei\-\_\-draw\-\_\-tools.\-c@{ei\-\_\-draw\-\_\-tools.\-c}!ei\-\_\-free\-\_\-linked\-\_\-points\-\_\-list@{ei\-\_\-free\-\_\-linked\-\_\-points\-\_\-list}}
+\index{ei\-\_\-free\-\_\-linked\-\_\-points\-\_\-list@{ei\-\_\-free\-\_\-linked\-\_\-points\-\_\-list}!ei_draw_tools.c@{ei\-\_\-draw\-\_\-tools.\-c}}
+\subsubsection[{ei\-\_\-free\-\_\-linked\-\_\-points\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}void ei\-\_\-free\-\_\-linked\-\_\-points\-\_\-list (
+\begin{DoxyParamCaption}
+\item[{{\bf ei\-\_\-linked\-\_\-point\-\_\-t} $\ast$}]{liste}
+\end{DoxyParamCaption}
+)}}\label{ei__draw__tools_8c_a953b7d2b73fb007a8cb6b73260a48242}
+
+
+Definition at line 67 of file ei\-\_\-draw\-\_\-tools.\-c.
+
+\hypertarget{ei__draw__tools_8c_a747200632b61638bd31931e604fe47fb}{\index{ei\-\_\-draw\-\_\-tools.\-c@{ei\-\_\-draw\-\_\-tools.\-c}!ei\-\_\-rectangles\-\_\-intersect@{ei\-\_\-rectangles\-\_\-intersect}}
+\index{ei\-\_\-rectangles\-\_\-intersect@{ei\-\_\-rectangles\-\_\-intersect}!ei_draw_tools.c@{ei\-\_\-draw\-\_\-tools.\-c}}
+\subsubsection[{ei\-\_\-rectangles\-\_\-intersect}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ei\-\_\-rect\-\_\-t} ei\-\_\-rectangles\-\_\-intersect (
+\begin{DoxyParamCaption}
+\item[{{\bf ei\-\_\-rect\-\_\-t}}]{a, }
+\item[{{\bf ei\-\_\-rect\-\_\-t}}]{b}
+\end{DoxyParamCaption}
+)}}\label{ei__draw__tools_8c_a747200632b61638bd31931e604fe47fb}
+
+
+Definition at line 211 of file ei\-\_\-draw\-\_\-tools.\-c.
+
+\hypertarget{ei__draw__tools_8c_acd872fbe31f8a9fcb44b3a58f85a0f28}{\index{ei\-\_\-draw\-\_\-tools.\-c@{ei\-\_\-draw\-\_\-tools.\-c}!ei\-\_\-switch\-\_\-anchor@{ei\-\_\-switch\-\_\-anchor}}
+\index{ei\-\_\-switch\-\_\-anchor@{ei\-\_\-switch\-\_\-anchor}!ei_draw_tools.c@{ei\-\_\-draw\-\_\-tools.\-c}}
+\subsubsection[{ei\-\_\-switch\-\_\-anchor}]{\setlength{\rightskip}{0pt plus 5cm}static void ei\-\_\-switch\-\_\-anchor (
+\begin{DoxyParamCaption}
+\item[{{\bf ei\-\_\-anchor\-\_\-t}}]{anchor, }
+\item[{{\bf ei\-\_\-point\-\_\-t} $\ast$}]{topleft, }
+\item[{{\bf ei\-\_\-size\-\_\-t}}]{size, }
+\item[{{\bf ei\-\_\-point\-\_\-t}}]{wtopleft, }
+\item[{{\bf ei\-\_\-size\-\_\-t}}]{wsize}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{ei__draw__tools_8c_acd872fbe31f8a9fcb44b3a58f85a0f28}
+
+
+Definition at line 129 of file ei\-\_\-draw\-\_\-tools.\-c.
+

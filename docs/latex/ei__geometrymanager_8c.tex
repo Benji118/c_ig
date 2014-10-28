@@ -1,0 +1,263 @@
+\hypertarget{ei__geometrymanager_8c}{\section{ei\-\_\-geometrymanager.\-c File Reference}
+\label{ei__geometrymanager_8c}\index{ei\-\_\-geometrymanager.\-c@{ei\-\_\-geometrymanager.\-c}}
+}
+
+
+Manages the positionning and sizing of widgets on the screen.  
+
+
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}ei\-\_\-geometrymanager.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ei\-\_\-application.\-h\char`\"{}}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structei__placer__param__t}{ei\-\_\-placer\-\_\-param\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{ei__geometrymanager_8c_ab89fd6fd747007f157cf560e94d6365a}{T\-E\-S\-T\-\_\-\-A\-N\-D\-\_\-\-S\-E\-T}(a, b, default)~if (a == N\-U\-L\-L) \{ b-\/$>$a = default; \} else \{ b-\/$>$a = $\ast$a; \}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structei__placer__param__t}{ei\-\_\-placer\-\_\-param\-\_\-t} \hyperlink{ei__geometrymanager_8c_a54b1cf18a2e62d99460095c80fff849c}{ei\-\_\-placer\-\_\-param\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{ei__geometrymanager_8c_a76a03eebab21e4d31c465cd6d1e2c1d6}{geo\-\_\-insertion\-\_\-tail} (\hyperlink{structei__geometrymanager__t}{ei\-\_\-geometrymanager\-\_\-t} $\ast$geometrymanager)
+\item 
+void \hyperlink{ei__geometrymanager_8c_a2928bbcaa255d39507ef43f7c27ce33b}{ei\-\_\-geometrymanager\-\_\-register} (\hyperlink{structei__geometrymanager__t}{ei\-\_\-geometrymanager\-\_\-t} $\ast$geometrymanager)
+\begin{DoxyCompactList}\small\item\em Registers a geometry manager to the program so that it can be called to manager widgets. This must be done only once in the application. \end{DoxyCompactList}\item 
+\hyperlink{structei__geometrymanager__t}{ei\-\_\-geometrymanager\-\_\-t} $\ast$ \hyperlink{ei__geometrymanager_8c_a6c505d9519b6dfb509346ca0a32d0623}{ei\-\_\-geometrymanager\-\_\-from\-\_\-name} (\hyperlink{ei__geometrymanager_8h_af4774cf9094dc50890c3b767481d6336}{ei\-\_\-geometrymanager\-\_\-name\-\_\-t} name)
+\begin{DoxyCompactList}\small\item\em Returns a geometry manager structure from its name. \end{DoxyCompactList}\item 
+void \hyperlink{ei__geometrymanager_8c_a4d7abf47408b59fc6d7aabb362ef817d}{ei\-\_\-geometrymanager\-\_\-unmap} (\hyperlink{structei__widget__t}{ei\-\_\-widget\-\_\-t} $\ast$widget)
+\begin{DoxyCompactList}\small\item\em Tell the geometry manager in charge of a widget to forget it. This removes the widget from the screen. If the widget is not currently managed, this function returns silently. Side effects\-: \end{DoxyCompactList}\item 
+void \hyperlink{ei__geometrymanager_8c_aac6f25cfade8f4ae3a5d66902e93368c}{placer\-\_\-releasefunc} (\hyperlink{structei__widget__t}{ei\-\_\-widget\-\_\-t} $\ast$widget)
+\item 
+void \hyperlink{ei__geometrymanager_8c_a0311ea361179e5d08abf861eb82a1180}{placer\-\_\-runfunc} (\hyperlink{structei__widget__t}{ei\-\_\-widget\-\_\-t} $\ast$widget)
+\item 
+void \hyperlink{ei__geometrymanager_8c_a90e44cafe03fc57166584123bb0ca6ca}{ei\-\_\-register\-\_\-placer\-\_\-manager} ()
+\begin{DoxyCompactList}\small\item\em Registers the \char`\"{}placer\char`\"{} geometry manager in the program. This must be called only once before the \hyperlink{ei__geometrymanager_8c_ad07d3ef9bc1f0efe5b45b23f8c3b9081}{ei\-\_\-place} function can be called. \end{DoxyCompactList}\item 
+void \hyperlink{ei__geometrymanager_8c_ad07d3ef9bc1f0efe5b45b23f8c3b9081}{ei\-\_\-place} (\hyperlink{structei__widget__t}{ei\-\_\-widget\-\_\-t} $\ast$widget, \hyperlink{ei__types_8h_a3852c963af609d31d7cfcff79c4c8450}{ei\-\_\-anchor\-\_\-t} $\ast$anchor, int $\ast$x, int $\ast$y, int $\ast$width, int $\ast$height, float $\ast$rel\-\_\-x, float $\ast$rel\-\_\-y, float $\ast$rel\-\_\-width, float $\ast$rel\-\_\-height)
+\begin{DoxyCompactList}\small\item\em Configures the geometry of a widget using the \char`\"{}placer\char`\"{} geometry manager. If the widget was already managed by another geometry manager, then it is first removed from the previous geometry manager. If the widget was already managed by the \char`\"{}placer\char`\"{}, then this calls simply updates the placer parameters\-: arguments that are not N\-U\-L\-L replace previous values. When the arguments are passed as N\-U\-L\-L, the placer uses default values (detailed in the argument descriptions below). If no size is provided (either absolute or relative), then the requested size of the widget is used, i.\-e. the minimal size required to display its content. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structei__geometrymanager__t}{ei\-\_\-geometrymanager\-\_\-t} $\ast$ \hyperlink{ei__geometrymanager_8c_af4e6243b9953aefc06cf3db0acba28b7}{global\-\_\-geometry\-\_\-register} = N\-U\-L\-L
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Manages the positionning and sizing of widgets on the screen. \begin{DoxyAuthor}{Author}
+Equipe poulet 06.\-2014 
+\end{DoxyAuthor}
+
+
+Definition in file \hyperlink{ei__geometrymanager_8c_source}{ei\-\_\-geometrymanager.\-c}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{ei__geometrymanager_8c_ab89fd6fd747007f157cf560e94d6365a}{\index{ei\-\_\-geometrymanager.\-c@{ei\-\_\-geometrymanager.\-c}!T\-E\-S\-T\-\_\-\-A\-N\-D\-\_\-\-S\-E\-T@{T\-E\-S\-T\-\_\-\-A\-N\-D\-\_\-\-S\-E\-T}}
+\index{T\-E\-S\-T\-\_\-\-A\-N\-D\-\_\-\-S\-E\-T@{T\-E\-S\-T\-\_\-\-A\-N\-D\-\_\-\-S\-E\-T}!ei_geometrymanager.c@{ei\-\_\-geometrymanager.\-c}}
+\subsubsection[{T\-E\-S\-T\-\_\-\-A\-N\-D\-\_\-\-S\-E\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-E\-S\-T\-\_\-\-A\-N\-D\-\_\-\-S\-E\-T(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{b, }
+\item[{}]{default}
+\end{DoxyParamCaption}
+)~if (a == N\-U\-L\-L) \{ b-\/$>$a = default; \} else \{ b-\/$>$a = $\ast$a; \}}}\label{ei__geometrymanager_8c_ab89fd6fd747007f157cf560e94d6365a}
+
+
+Definition at line 21 of file ei\-\_\-geometrymanager.\-c.
+
+
+
+\subsection{Typedef Documentation}
+\hypertarget{ei__geometrymanager_8c_a54b1cf18a2e62d99460095c80fff849c}{\index{ei\-\_\-geometrymanager.\-c@{ei\-\_\-geometrymanager.\-c}!ei\-\_\-placer\-\_\-param\-\_\-t@{ei\-\_\-placer\-\_\-param\-\_\-t}}
+\index{ei\-\_\-placer\-\_\-param\-\_\-t@{ei\-\_\-placer\-\_\-param\-\_\-t}!ei_geometrymanager.c@{ei\-\_\-geometrymanager.\-c}}
+\subsubsection[{ei\-\_\-placer\-\_\-param\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf ei\-\_\-placer\-\_\-param\-\_\-t}  {\bf ei\-\_\-placer\-\_\-param\-\_\-t}}}\label{ei__geometrymanager_8c_a54b1cf18a2e62d99460095c80fff849c}
+
+
+\subsection{Function Documentation}
+\hypertarget{ei__geometrymanager_8c_a6c505d9519b6dfb509346ca0a32d0623}{\index{ei\-\_\-geometrymanager.\-c@{ei\-\_\-geometrymanager.\-c}!ei\-\_\-geometrymanager\-\_\-from\-\_\-name@{ei\-\_\-geometrymanager\-\_\-from\-\_\-name}}
+\index{ei\-\_\-geometrymanager\-\_\-from\-\_\-name@{ei\-\_\-geometrymanager\-\_\-from\-\_\-name}!ei_geometrymanager.c@{ei\-\_\-geometrymanager.\-c}}
+\subsubsection[{ei\-\_\-geometrymanager\-\_\-from\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ei\-\_\-geometrymanager\-\_\-t}$\ast$ ei\-\_\-geometrymanager\-\_\-from\-\_\-name (
+\begin{DoxyParamCaption}
+\item[{{\bf ei\-\_\-geometrymanager\-\_\-name\-\_\-t}}]{name}
+\end{DoxyParamCaption}
+)}}\label{ei__geometrymanager_8c_a6c505d9519b6dfb509346ca0a32d0623}
+
+
+Returns a geometry manager structure from its name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the geometry manager.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The structure describing the geometry manager. 
+\end{DoxyReturn}
+
+
+Definition at line 91 of file ei\-\_\-geometrymanager.\-c.
+
+\hypertarget{ei__geometrymanager_8c_a2928bbcaa255d39507ef43f7c27ce33b}{\index{ei\-\_\-geometrymanager.\-c@{ei\-\_\-geometrymanager.\-c}!ei\-\_\-geometrymanager\-\_\-register@{ei\-\_\-geometrymanager\-\_\-register}}
+\index{ei\-\_\-geometrymanager\-\_\-register@{ei\-\_\-geometrymanager\-\_\-register}!ei_geometrymanager.c@{ei\-\_\-geometrymanager.\-c}}
+\subsubsection[{ei\-\_\-geometrymanager\-\_\-register}]{\setlength{\rightskip}{0pt plus 5cm}void ei\-\_\-geometrymanager\-\_\-register (
+\begin{DoxyParamCaption}
+\item[{{\bf ei\-\_\-geometrymanager\-\_\-t} $\ast$}]{geometrymanager}
+\end{DoxyParamCaption}
+)}}\label{ei__geometrymanager_8c_a2928bbcaa255d39507ef43f7c27ce33b}
+
+
+Registers a geometry manager to the program so that it can be called to manager widgets. This must be done only once in the application. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em geometrymanager} & The structure describing the geometry manager. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 78 of file ei\-\_\-geometrymanager.\-c.
+
+\hypertarget{ei__geometrymanager_8c_a4d7abf47408b59fc6d7aabb362ef817d}{\index{ei\-\_\-geometrymanager.\-c@{ei\-\_\-geometrymanager.\-c}!ei\-\_\-geometrymanager\-\_\-unmap@{ei\-\_\-geometrymanager\-\_\-unmap}}
+\index{ei\-\_\-geometrymanager\-\_\-unmap@{ei\-\_\-geometrymanager\-\_\-unmap}!ei_geometrymanager.c@{ei\-\_\-geometrymanager.\-c}}
+\subsubsection[{ei\-\_\-geometrymanager\-\_\-unmap}]{\setlength{\rightskip}{0pt plus 5cm}void ei\-\_\-geometrymanager\-\_\-unmap (
+\begin{DoxyParamCaption}
+\item[{{\bf ei\-\_\-widget\-\_\-t} $\ast$}]{widget}
+\end{DoxyParamCaption}
+)}}\label{ei__geometrymanager_8c_a4d7abf47408b59fc6d7aabb362ef817d}
+
+
+Tell the geometry manager in charge of a widget to forget it. This removes the widget from the screen. If the widget is not currently managed, this function returns silently. Side effects\-: 
+
+
+\begin{DoxyItemize}
+\item the \hyperlink{ei__geometrymanager_8h_a66a8ffc0df10cdc7accb921fbed8a930}{ei\-\_\-geometrymanager\-\_\-releasefunc\-\_\-t} of the geometry manager in charge of this widget is called,  
+\item the geom\-\_\-param field of the widget is freed,  
+\item the current screen\-\_\-location of the widget is invalided (which will trigger a redraw),  
+\item the screen\-\_\-location of the widget is reset to 0.  
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em widget} & The widget to unmap from the screen. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 116 of file ei\-\_\-geometrymanager.\-c.
+
+\hypertarget{ei__geometrymanager_8c_ad07d3ef9bc1f0efe5b45b23f8c3b9081}{\index{ei\-\_\-geometrymanager.\-c@{ei\-\_\-geometrymanager.\-c}!ei\-\_\-place@{ei\-\_\-place}}
+\index{ei\-\_\-place@{ei\-\_\-place}!ei_geometrymanager.c@{ei\-\_\-geometrymanager.\-c}}
+\subsubsection[{ei\-\_\-place}]{\setlength{\rightskip}{0pt plus 5cm}void ei\-\_\-place (
+\begin{DoxyParamCaption}
+\item[{{\bf ei\-\_\-widget\-\_\-t} $\ast$}]{widget, }
+\item[{{\bf ei\-\_\-anchor\-\_\-t} $\ast$}]{anchor, }
+\item[{int $\ast$}]{x, }
+\item[{int $\ast$}]{y, }
+\item[{int $\ast$}]{width, }
+\item[{int $\ast$}]{height, }
+\item[{float $\ast$}]{rel\-\_\-x, }
+\item[{float $\ast$}]{rel\-\_\-y, }
+\item[{float $\ast$}]{rel\-\_\-width, }
+\item[{float $\ast$}]{rel\-\_\-height}
+\end{DoxyParamCaption}
+)}}\label{ei__geometrymanager_8c_ad07d3ef9bc1f0efe5b45b23f8c3b9081}
+
+
+Configures the geometry of a widget using the \char`\"{}placer\char`\"{} geometry manager. If the widget was already managed by another geometry manager, then it is first removed from the previous geometry manager. If the widget was already managed by the \char`\"{}placer\char`\"{}, then this calls simply updates the placer parameters\-: arguments that are not N\-U\-L\-L replace previous values. When the arguments are passed as N\-U\-L\-L, the placer uses default values (detailed in the argument descriptions below). If no size is provided (either absolute or relative), then the requested size of the widget is used, i.\-e. the minimal size required to display its content. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em widget} & The widget to place. \\
+\hline
+{\em anchor} & How to anchor the widget to the position defined by the placer (defaults to ei\-\_\-anc\-\_\-northwest). \\
+\hline
+{\em x} & The absolute x position of the widget (defaults to 0). \\
+\hline
+{\em y} & The absolute y position of the widget (defaults to 0). \\
+\hline
+{\em width} & The absolute width for the widget (defaults to the requested width of the widget). \\
+\hline
+{\em height} & The absolute height for the widget (defaults to the requested height of the widget). \\
+\hline
+{\em rel\-\_\-x} & The relative x position of the widget\-: 0.\-0 corresponds to the left side of the master, 1.\-0 to the right side (defaults to 0.\-0). \\
+\hline
+{\em rel\-\_\-y} & The relative y position of the widget\-: 0.\-0 corresponds to the top side of the master, 1.\-0 to the bottom side (defaults to 0.\-0). \\
+\hline
+{\em rel\-\_\-width} & The relative width of the widget\-: 0.\-0 corresponds to a width of 0, 1.\-0 to the width of the master (defaults to 0.\-0). \\
+\hline
+{\em rel\-\_\-height} & The relative height of the widget\-: 0.\-0 corresponds to a height of 0, 1.\-0 to the height of the master (defaults to 0.\-0). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 340 of file ei\-\_\-geometrymanager.\-c.
+
+\hypertarget{ei__geometrymanager_8c_a90e44cafe03fc57166584123bb0ca6ca}{\index{ei\-\_\-geometrymanager.\-c@{ei\-\_\-geometrymanager.\-c}!ei\-\_\-register\-\_\-placer\-\_\-manager@{ei\-\_\-register\-\_\-placer\-\_\-manager}}
+\index{ei\-\_\-register\-\_\-placer\-\_\-manager@{ei\-\_\-register\-\_\-placer\-\_\-manager}!ei_geometrymanager.c@{ei\-\_\-geometrymanager.\-c}}
+\subsubsection[{ei\-\_\-register\-\_\-placer\-\_\-manager}]{\setlength{\rightskip}{0pt plus 5cm}void ei\-\_\-register\-\_\-placer\-\_\-manager (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{ei__geometrymanager_8c_a90e44cafe03fc57166584123bb0ca6ca}
+
+
+Registers the \char`\"{}placer\char`\"{} geometry manager in the program. This must be called only once before the \hyperlink{ei__geometrymanager_8c_ad07d3ef9bc1f0efe5b45b23f8c3b9081}{ei\-\_\-place} function can be called. 
+
+
+
+Definition at line 318 of file ei\-\_\-geometrymanager.\-c.
+
+\hypertarget{ei__geometrymanager_8c_a76a03eebab21e4d31c465cd6d1e2c1d6}{\index{ei\-\_\-geometrymanager.\-c@{ei\-\_\-geometrymanager.\-c}!geo\-\_\-insertion\-\_\-tail@{geo\-\_\-insertion\-\_\-tail}}
+\index{geo\-\_\-insertion\-\_\-tail@{geo\-\_\-insertion\-\_\-tail}!ei_geometrymanager.c@{ei\-\_\-geometrymanager.\-c}}
+\subsubsection[{geo\-\_\-insertion\-\_\-tail}]{\setlength{\rightskip}{0pt plus 5cm}static void geo\-\_\-insertion\-\_\-tail (
+\begin{DoxyParamCaption}
+\item[{{\bf ei\-\_\-geometrymanager\-\_\-t} $\ast$}]{geometrymanager}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{ei__geometrymanager_8c_a76a03eebab21e4d31c465cd6d1e2c1d6}
+
+
+Definition at line 58 of file ei\-\_\-geometrymanager.\-c.
+
+\hypertarget{ei__geometrymanager_8c_aac6f25cfade8f4ae3a5d66902e93368c}{\index{ei\-\_\-geometrymanager.\-c@{ei\-\_\-geometrymanager.\-c}!placer\-\_\-releasefunc@{placer\-\_\-releasefunc}}
+\index{placer\-\_\-releasefunc@{placer\-\_\-releasefunc}!ei_geometrymanager.c@{ei\-\_\-geometrymanager.\-c}}
+\subsubsection[{placer\-\_\-releasefunc}]{\setlength{\rightskip}{0pt plus 5cm}void placer\-\_\-releasefunc (
+\begin{DoxyParamCaption}
+\item[{{\bf ei\-\_\-widget\-\_\-t} $\ast$}]{widget}
+\end{DoxyParamCaption}
+)}}\label{ei__geometrymanager_8c_aac6f25cfade8f4ae3a5d66902e93368c}
+
+
+Definition at line 162 of file ei\-\_\-geometrymanager.\-c.
+
+\hypertarget{ei__geometrymanager_8c_a0311ea361179e5d08abf861eb82a1180}{\index{ei\-\_\-geometrymanager.\-c@{ei\-\_\-geometrymanager.\-c}!placer\-\_\-runfunc@{placer\-\_\-runfunc}}
+\index{placer\-\_\-runfunc@{placer\-\_\-runfunc}!ei_geometrymanager.c@{ei\-\_\-geometrymanager.\-c}}
+\subsubsection[{placer\-\_\-runfunc}]{\setlength{\rightskip}{0pt plus 5cm}void placer\-\_\-runfunc (
+\begin{DoxyParamCaption}
+\item[{{\bf ei\-\_\-widget\-\_\-t} $\ast$}]{widget}
+\end{DoxyParamCaption}
+)}}\label{ei__geometrymanager_8c_a0311ea361179e5d08abf861eb82a1180}
+
+
+Definition at line 181 of file ei\-\_\-geometrymanager.\-c.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{ei__geometrymanager_8c_af4e6243b9953aefc06cf3db0acba28b7}{\index{ei\-\_\-geometrymanager.\-c@{ei\-\_\-geometrymanager.\-c}!global\-\_\-geometry\-\_\-register@{global\-\_\-geometry\-\_\-register}}
+\index{global\-\_\-geometry\-\_\-register@{global\-\_\-geometry\-\_\-register}!ei_geometrymanager.c@{ei\-\_\-geometrymanager.\-c}}
+\subsubsection[{global\-\_\-geometry\-\_\-register}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ei\-\_\-geometrymanager\-\_\-t}$\ast$ global\-\_\-geometry\-\_\-register = N\-U\-L\-L}}\label{ei__geometrymanager_8c_af4e6243b9953aefc06cf3db0acba28b7}
+
+
+Definition at line 52 of file ei\-\_\-geometrymanager.\-c.
+
